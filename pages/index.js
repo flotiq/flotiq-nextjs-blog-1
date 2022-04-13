@@ -11,7 +11,7 @@ export default function Home({ examplesData }) {
             </Head>
             <div className="m-5">
                 <Image
-                    src="/Logo.svg"
+                    src="/assets/flotiq-logo.svg"
                     height={85}
                     width={300}
                     alt="Flotiq logo"
