@@ -18,7 +18,7 @@ Kick off your project with this blog boilerplate. This starter ships with the ma
    
    ```bash
    npm i -g flotiq-cli
-   cd my-hello-world-starter
+   cd flotiq-nextjs-blog-1
    flotiq import [flotiqApiKey] .
    ```
    _Note: You need to put your Read and write API key as the `flotiqApiKey` for import to work, You don't need any content types in your account._
@@ -60,7 +60,7 @@ Kick off your project with this blog boilerplate. This starter ships with the ma
 
    Your site is now running at `http://localhost:3000`!
 
-   Open the `my-hello-world-starter` directory in your code editor of choice and edit `pages/index.js`. Save your changes and the browser will update in real time!
+   Open the `flotiq-nextjs-blog-1` directory in your code editor of choice and edit `pages/index.js`. Save your changes and the browser will update in real time!
 
 7. **Manage your content using Flotiq editor**
 
@@ -70,7 +70,7 @@ Kick off your project with this blog boilerplate. This starter ships with the ma
 
 Deploy this starter with one click on [Vercel](https://vercel.com/):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fflotiq%2Fnextjs-nextjs-blog-1)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fflotiq%2Fflotiq-nextjs-blog-1)
 
 ## Learning Next.js
 
@@ -82,4 +82,4 @@ Looking for more guidance? Full documentation for Next.js lives [on the website]
 
 If you wish to talk with us about this project, feel free to hop on our [![Discord Chat](https://img.shields.io/discord/682699728454025410.svg)](https://discord.gg/FwXcHnX).
 
-If you found a bug, please report it in [issues](https://github.com/flotiq/nextjs-starter-boilerplate/issues).
+If you found a bug, please report it in [issues](https://github.com/flotiq/flotiq-nextjs-blog-1/issues).
