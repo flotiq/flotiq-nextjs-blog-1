@@ -2,17 +2,17 @@
     <img src="https://editor.flotiq.com/fonts/fq-logo.svg" alt="Flotiq logo" title="Flotiq" align="right" height="60" />
 </a>
 
-Next JS starter boilerplate with Flotiq source
+Next JS starter for blog with Flotiq source
 ===========================
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Next JS configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Kick off your project with this blog boilerplate. This starter ships with the main Next JS configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
 ## Quick start
 
 1. **Start the project from template using npx**
 
     ```bash
-    git clone https://github.com/flotiq/nextjs-starter-boilerplate.git my-hello-world-starter
+    git clone https://github.com/flotiq/flotiq-nextjs-blog-1 flotiq-nextjs-blog-1
     ```
 2. **Import example data from starter to Flotiq**
    
@@ -33,10 +33,11 @@ Kick off your project with this hello-world boilerplate. This starter ships with
    cp .env.dist .env.local
    ```
  
-   and add api key:
+   and add api key's:
 
     ```
     FLOTIQ_API_KEY=YOUR FLOTIQ API KEY
+    GA_TRACKING_ID=YOUR GA API KEY
     ```
 
 4. **Install dependencies**
@@ -69,7 +70,7 @@ Kick off your project with this hello-world boilerplate. This starter ships with
 
 Deploy this starter with one click on [Vercel](https://vercel.com/):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fflotiq%2Fnextjs-starter-boilerplate)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fflotiq%2Fnextjs-nextjs-blog-1)
 
 ## Learning Next.js
 
