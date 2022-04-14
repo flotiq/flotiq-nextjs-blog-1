@@ -11,7 +11,7 @@ const BlogPostMetaDetails = ({ date, readingTime, withTags= false, tags, additio
             <div />
         </div>
         {withTags && (
-            <BlogPostTags tags={tags} withTags={withTags} />
+            <BlogPostTags tags={tags} />
         )}
     </div>
 );
