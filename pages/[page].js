@@ -18,6 +18,9 @@ export default function Home({posts, pageContext}) {
                 Use it for your needs, add content and customize in any way"
             />
             <BlogCards posts={posts}/>
+            {pageContext.numPages > 1 && (
+                <Pagination page={pageContext.currentPage} numOfPages={pageContext.numPages} rounded="md" />
+            )}
         </Layout>
     )
 }
