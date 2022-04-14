@@ -2,7 +2,7 @@ import React from 'react';
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Link from 'next/link'
-import Logo from '../assets/kyan-logo.png';
+import Logo from '../public/assets/kyan-logo.png';
 
 const Header = () => (
     <Disclosure as="nav">
@@ -26,7 +26,7 @@ const Header = () => (
                                 </Disclosure.Button>
                             </div>
                             <div className="flex-shrink-0 flex grow md:grow-0 items-center justify-center">
-                                <Link to="/">
+                                <Link href="/">
                                     <img
                                         className="block h-8 md:h-12 w-auto"
                                         src={Logo}
@@ -40,7 +40,7 @@ const Header = () => (
                         </div>
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
-                                <a
+                                <Link
                                     href="mailto:hello@flotiq.com"
                                     className="
                                         relative
@@ -54,7 +54,7 @@ const Header = () => (
                                         hover:text-secondary"
                                 >
                                     Say Hi!
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="md:hidden flex items-center justify-center w-full md:w-auto py-5 md:py-0">

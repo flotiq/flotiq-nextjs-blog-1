@@ -3,8 +3,10 @@ import { Card } from 'flotiq-components-react';
 import Link from 'next/link'
 import BlogPostMetaDetailsPresentation from "./blog-post/BlogPostMetaDetailsPresentation";
 import BlogPostTags from "./blog-post/BlogPostTags";
+import {config} from "../lib/config";
 
 const CustomCard = ({ title, excerpt, date, readingTime, tags, withTags = false, image, slug }) => {
+    const imageName = (image) && image.substring(image.lastIndexOf('/')+1);
     return (
         <Card
             horizontal
@@ -21,7 +23,7 @@ const CustomCard = ({ title, excerpt, date, readingTime, tags, withTags = false,
                     'flex flex-col items-start justify-between order-2 lg:order-1 px-5 md:px-10 pt-10 pb-5',
                 ]}
             >
-                <Link to={`/${encodeURIComponent(slug)}`}>
+                <Link href={`/post/${encodeURIComponent(slug)}`}>
                     <div>
                         <Card.Title>
                             {title}
@@ -35,16 +37,18 @@ const CustomCard = ({ title, excerpt, date, readingTime, tags, withTags = false,
                     {withTags && (
                         <BlogPostTags tags={tags} />
                     )}
-                    <Link to={`/${encodeURIComponent(slug)}`}>
+                    <Link href={`/post/${encodeURIComponent(slug)}`}>
                         <div className="flex flex-wrap justify-between text-sm md:text-xs xl:text-sm font-light mt-5">
                             <BlogPostMetaDetailsPresentation date={date} readingTime={readingTime} />
                         </div>
                     </Link>
                 </div>
             </Card.Body>
-            <Link to={`/${encodeURIComponent(slug)}`} className="lg:basis-3/5 order-1 lg:order-2">
-                <Card.Img src={image} alt={title} additionalContainerClasses={['order-1 lg:order-2']} />
+            <div className="lg:basis-3/5 order-1 lg:order-2">
+            <Link href={`/post/${encodeURIComponent(slug)}`}>
+                <img alt={title} src={`${config.api.url}/image/0x0/${imageName}.jpg`} />
             </Link>
+            </div>
         </Card>
     );
 };

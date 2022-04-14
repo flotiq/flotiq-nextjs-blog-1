@@ -6,11 +6,21 @@ module.exports = {
     ],
     theme: {
         extend: {
+            screens: {
+                sm: '480px',
+                md: '768px',
+                lg: '976px',
+                xl: '1440px',
+            },
             colors: {
-                'light-blue': '#E9F3FF',
-                primary: '#0083FC',
-                'primary-2': '#015BD7',
-                'dark-blue': '#141046',
+                primary: '#64FBC1',
+                secondary: '#0083FC',
+                'light-gray': '#F9F9F9',
+                'olive-green': '#C6FB55',
+                dark: '#000000',
+            },
+            fontFamily: {
+                sora: ['Sora', 'sans-serif'],
             },
         },
     },

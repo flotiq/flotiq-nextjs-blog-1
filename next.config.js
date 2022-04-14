@@ -9,11 +9,21 @@ module.exports = withPlugins([
             {
                 exclude: /\.svg$/
             }
-        ],
+        ]
     ],
+
     {
+        async rewrites() {
+            return [
+                {
+                    source: '/',
+                    destination: '/1'
+                }
+            ]
+        },
         images: {
             dangerouslyAllowSVG: true,
+            disableStaticImages: true
         },
         webpack: (config, options) => {
             if (!options.isServer) {
@@ -21,6 +31,7 @@ module.exports = withPlugins([
             }
             config.module.rules.push({
                 test: /\.svg$/,
+                issuer: { and: [/\.(js|ts)x?$/] },
                 use: ["@svgr/webpack"]
             });
             return config;

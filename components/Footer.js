@@ -1,7 +1,6 @@
 import React from 'react';
-import { PoweredByFlotiq } from 'flotiq-components-react';
-import Logo from '../assets/kyan-logo.png';
-import Link from 'next/link'
+import {PoweredByFlotiq} from 'flotiq-components-react';
+import Link from 'next/link';
 
 const navigation = {
     social: [
@@ -26,13 +25,13 @@ const navigation = {
             href: 'https://www.linkedin.com/company/flotiq/',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 32 32" {...props}>
-                    <rect y="9" width="7" height="23" />
+                    <rect y="9" width="7" height="23"/>
                     <path
                         fillRule="evenodd"
                         d="M24,9c-4,0-5.11,1.31-6,3V9H11V32h7V19c0-2,0-4,3.5-4S25,17,25,19V32h7V19C32,13,31,9,24,9Z"
                         clipRule="evenodd"
                     />
-                    <circle cx="3.5" cy="3.5" r="3.5" />
+                    <circle cx="3.5" cy="3.5" r="3.5"/>
                 </svg>
             ),
         },
@@ -68,10 +67,10 @@ const Footer = () => (
             <div className="w-full md:w-auto px-5 md:px-0 mt-8
                 flex justify-between md:justify-center items-center space-x-5 md:space-x-10"
             >
-                <Link to="/">
+                <Link href="/">
                     <img
                         className="block h-8 w-auto md:h-10 w-auto mr-5 md:mr-10"
-                        src={Logo}
+                        src={'/assets/kyan-logo.png'}
                         alt="Flotiq"
                     />
                 </Link>
@@ -85,8 +84,10 @@ const Footer = () => (
                                 p-3 bg-light-gray rounded"
                             rel="noreferrer"
                         >
-                            <span className="sr-only">{item.name}</span>
-                            <item.icon className="h-6 w-6" aria-hidden="true" />
+                            <>
+                                <span className="sr-only">{item.name}</span>
+                                <item.icon className="h-6 w-6" aria-hidden="true"/>
+                            </>
                         </a>
                     ))}
                 </div>
@@ -94,7 +95,7 @@ const Footer = () => (
             <div className="w-full md:w-auto px-5 md:px-0 py-5 mt-7 md:mt-15
                 flex justify-between md:justify-center items-center bg-light-gray md:bg-transparent"
             >
-                <PoweredByFlotiq />
+                <PoweredByFlotiq/>
                 <p className="text-center text-xs md:text-base font-light">
                     Copyright &copy; Flotiq 2022
                 </p>
