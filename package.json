@@ -17,8 +17,6 @@
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
     "@zeit/next-source-maps": "^0.0.3",
-    "babel-eslint": "10.x",
-    "eslint-plugin-flowtype": "4.x",
     "flotiq-components-react": "^0.5.0",
     "highlight.js": "^11.4.0",
     "moment": "^2.29.2",

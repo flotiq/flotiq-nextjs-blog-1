@@ -14,12 +14,12 @@ module.exports = {
     extends: [
         'airbnb',
         'eslint:recommended',
-        "next"
+        'next',
     ],
     plugins: [
         'jsx-a11y',
         'react-hooks',
-        'import'
+        'import',
     ],
     rules: {
         /* Restrict file extensions that may contain JSX */
