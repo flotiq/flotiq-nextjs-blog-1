@@ -1,9 +1,9 @@
 import React from 'react';
+import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Head from "next/head";
 
-const Layout = ({ children, additionalClass = [], title, description  }) => (
+const Layout = ({ children, additionalClass = [], title, description }) => (
     <main className={['font-sora', 'px-4', ...additionalClass].join(' ')}>
         <Head>
             <title>{title}</title>

@@ -1,8 +1,9 @@
-import Image from 'next/image'
-import { Header } from 'flotiq-components-react'
-import Layout from "../layouts/layout";
+import Image from 'next/image';
+import { Header } from 'flotiq-components-react';
+import React from 'react';
+import Layout from '../layouts/layout';
 
-const title = 'Page not found'
+const title = 'Page not found';
 const NotFoundPage = () => (
     <Layout title={title}>
         <main className="flex flex-col h-screen justify-center items-center">
@@ -16,6 +17,6 @@ const NotFoundPage = () => (
             />
         </main>
     </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

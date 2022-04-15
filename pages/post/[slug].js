@@ -1,24 +1,26 @@
-import BlogPostTemplate from "../../templates/blog-post";
-import {getBlogPostBySlug, getBlogPosts, getNextBlogPost, getPreviousBlogPost} from "../../lib/blogPosts";
+import React from 'react';
+import BlogPostTemplate from '../../templates/blog-post';
+import { getBlogPostBySlug, getBlogPosts, getNextBlogPost, getPreviousBlogPost } from '../../lib/blogPosts';
 
-export default function Home({post, pageContext}) {
-    return (
-        <BlogPostTemplate post={post} pageContext={
+const Home = ({ post, pageContext }) => (
+    <BlogPostTemplate
+        post={post}
+        pageContext={
             {
-                pageContext
+                pageContext,
             }
         }
-        />
-    );
-};
+    />
+);
 
 export async function getStaticProps({ params }) {
     const postBySlug = await getBlogPostBySlug(params.slug);
     const createdAt = postBySlug?.data[0]?.internal.createdAt;
     const previousPost = await getPreviousBlogPost(createdAt || null);
-    const previousPostSlug = (previousPost && previousPost.data && previousPost.data[0]) ? previousPost.data[0].slug : null;
+    const previousPostSlug = (previousPost && previousPost.data && previousPost.data[0])
+        ? previousPost.data[0].slug : null;
     const nextPost = await getNextBlogPost(createdAt || null);
-    const nextPostSlug =  (nextPost && nextPost.data && nextPost.data[0]) ? nextPost.data[0].slug : null;
+    const nextPostSlug = (nextPost && nextPost.data && nextPost.data[0]) ? nextPost.data[0].slug : null;
 
     return {
         props: {
@@ -26,9 +28,9 @@ export async function getStaticProps({ params }) {
             pageContext: {
                 previous: previousPostSlug,
                 next: nextPostSlug,
-            }
+            },
         },
-    }
+    };
 }
 
 export async function getStaticPaths() {
@@ -36,13 +38,13 @@ export async function getStaticPaths() {
     const postData = posts.data;
 
     return {
-        paths: postData.map((post) => {
-            return {
-                params: {
-                    slug: post.slug
-                },
-            }
-        }),
+        paths: postData.map((post) => ({
+            params: {
+                slug: post.slug,
+            },
+        })),
         fallback: false,
-    }
+    };
 }
+
+export default Home;

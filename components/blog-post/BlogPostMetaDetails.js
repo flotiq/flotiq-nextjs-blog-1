@@ -1,8 +1,8 @@
 import React from 'react';
-import BlogPostTags from "./BlogPostTags";
-import BlogPostMetaDetailsPresentation from "./BlogPostMetaDetailsPresentation";
+import BlogPostTags from './BlogPostTags';
+import BlogPostMetaDetailsPresentation from './BlogPostMetaDetailsPresentation';
 
-const BlogPostMetaDetails = ({ date, readingTime, withTags= false, tags, additionalClass }) => (
+const BlogPostMetaDetails = ({ date, readingTime, withTags = false, tags, additionalClass }) => (
     <div className={['px-6 md:px-12 flex flex-wrap '
     + 'items-center justify-between font-light', ...additionalClass].join(' ')}
     >

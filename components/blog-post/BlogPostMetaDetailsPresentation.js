@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BlogPostMetaDetailsPresentation = ({date, readingTime}) => (
+const BlogPostMetaDetailsPresentation = ({ date, readingTime }) => (
     <>
         <p>
             Date:
