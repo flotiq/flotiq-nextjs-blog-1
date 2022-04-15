@@ -60,7 +60,7 @@ Kick off your project with this blog boilerplate. This starter ships with the ma
 
    Your site is now running at `http://localhost:3000`!
 
-   Open the `flotiq-nextjs-blog-1` directory in your code editor of choice and edit `pages/index.js`. Save your changes and the browser will update in real time!
+   Open the `flotiq-nextjs-blog-1` directory in your code editor of choice and edit `pages/[pages].js`. Save your changes and the browser will update in real time!
 
 7. **Manage your content using Flotiq editor**
 
