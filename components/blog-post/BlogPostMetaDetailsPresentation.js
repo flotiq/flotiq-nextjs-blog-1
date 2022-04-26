@@ -3,11 +3,11 @@ import React from 'react';
 const BlogPostMetaDetailsPresentation = ({ date, readingTime }) => (
     <>
         <p>
-            Date:
+            Date:&nbsp;
             {date}
         </p>
         <p>
-            Reading Time:
+            Reading Time:&nbsp;
             {readingTime}
         </p>
     </>
