@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { PoweredByFlotiq } from 'flotiq-components-react';
 import Link from 'next/link';
@@ -63,54 +63,50 @@ const navigation = {
     ],
 };
 
-const Footer = () => {
-    const logoRef = useRef();
-    return (
-        <footer>
-            <div className="max-w-7xl mx-auto pt-12 overflow-hidden lg:px-8">
-                <div className="w-full md:w-auto px-5 md:px-0 mt-8
+const Footer = () => (
+    <footer>
+        <div className="max-w-7xl mx-auto pt-12 overflow-hidden lg:px-8">
+            <div className="w-full md:w-auto px-5 md:px-0 mt-8
                 flex justify-between md:justify-center items-center space-x-5 md:space-x-10"
-                >
-                    <Link href="/" passHref>
-                        <a>
-                            <Image
-                                className="block h-8 w-auto md:h-10 w-auto mr-5 md:mr-10"
-                                src={Logo}
-                                alt="Flotiq"
-                                ref={logoRef}
-                                width="138px"
-                                height="50px"
-                            />
-                        </a>
+            >
+                <Link href="/" passHref>
+                    <a>
+                        <Image
+                            className="block h-8 w-auto md:h-10 w-auto mr-5 md:mr-10"
+                            src={Logo}
+                            alt="Flotiq"
+                            width="138px"
+                            height="50px"
+                        />
+                    </a>
 
-                    </Link>
-                    <div className="flex items-center justify-center space-x-4 md:space-x-3">
-                        {navigation.social.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                target="_blank"
-                                className="text-secondary hover:text-gray-500
+                </Link>
+                <div className="flex items-center justify-center space-x-4 md:space-x-3">
+                    {navigation.social.map((item) => (
+                        <a
+                            key={item.name}
+                            href={item.href}
+                            target="_blank"
+                            className="text-secondary hover:text-gray-500
                                 p-3 bg-light-gray rounded"
-                                rel="noreferrer"
-                            >
-                                <span className="sr-only">{item.name}</span>
-                                <item.icon className="h-6 w-6" aria-hidden="true" />
-                            </a>
-                        ))}
-                    </div>
-                </div>
-                <div className="w-full md:w-auto px-5 md:px-0 py-5 mt-7 md:mt-15
-                flex justify-between md:justify-center items-center bg-light-gray md:bg-transparent"
-                >
-                    <PoweredByFlotiq />
-                    <p className="text-center text-xs md:text-base font-light">
-                        Copyright &copy; Flotiq 2022
-                    </p>
+                            rel="noreferrer"
+                        >
+                            <span className="sr-only">{item.name}</span>
+                            <item.icon className="h-6 w-6" aria-hidden="true" />
+                        </a>
+                    ))}
                 </div>
             </div>
-        </footer>
-    );
-};
+            <div className="w-full md:w-auto px-5 md:px-0 py-5 mt-7 md:mt-15
+                flex justify-between md:justify-center items-center bg-light-gray md:bg-transparent"
+            >
+                <PoweredByFlotiq />
+                <p className="text-center text-xs md:text-base font-light">
+                    Copyright &copy; Flotiq 2022
+                </p>
+            </div>
+        </div>
+    </footer>
+);
 
 export default Footer;
