@@ -72,14 +72,17 @@ const Footer = () => {
                 flex justify-between md:justify-center items-center space-x-5 md:space-x-10"
                 >
                     <Link href="/" passHref>
-                        <Image
-                            className="block h-8 w-auto md:h-10 w-auto mr-5 md:mr-10"
-                            src={Logo}
-                            alt="Flotiq"
-                            ref={logoRef}
-                            width="138px"
-                            height="50px"
-                        />
+                        <a>
+                            <Image
+                                className="block h-8 w-auto md:h-10 w-auto mr-5 md:mr-10"
+                                src={Logo}
+                                alt="Flotiq"
+                                ref={logoRef}
+                                width="138px"
+                                height="50px"
+                            />
+                        </a>
+
                     </Link>
                     <div className="flex items-center justify-center space-x-4 md:space-x-3">
                         {navigation.social.map((item) => (

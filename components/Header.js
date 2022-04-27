@@ -30,14 +30,16 @@ const Header = () => {
                                 </div>
                                 <div className="flex-shrink-0 flex grow md:grow-0 items-center justify-center">
                                     <Link href="/" passHref ref={ref}>
-                                        <Image
-                                            className="block h-8 md:h-12 w-auto cursor-pointer"
-                                            src={Logo}
-                                            ref={ref}
-                                            alt="Flotiq"
-                                            width="138px"
-                                            height="50px"
-                                        />
+                                        <a>
+                                            <Image
+                                                className="block h-8 md:h-12 w-auto cursor-pointer"
+                                                src={Logo}
+                                                ref={ref}
+                                                alt="Flotiq"
+                                                width="138px"
+                                                height="50px"
+                                            />
+                                        </a>
                                     </Link>
                                 </div>
                             </div>
