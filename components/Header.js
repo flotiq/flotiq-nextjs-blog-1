@@ -33,7 +33,7 @@ const Header = () => {
                                         <Image
                                             className="block h-8 md:h-12 w-auto cursor-pointer"
                                             src={Logo}
-                                            innerRef={ref}
+                                            ref={ref}
                                             alt="Flotiq"
                                             width="138px"
                                             height="50px"

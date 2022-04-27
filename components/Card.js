@@ -51,7 +51,7 @@ const CustomCard = ({ title, excerpt, date, readingTime, tags, withTags = false,
                     <Image
                         alt={title}
                         src={`${config.api.url}/image/0x0/${imageName}.jpg`}
-                        innerRef={ref}
+                        ref={ref}
                         width={700}
                         height={300}
                     />

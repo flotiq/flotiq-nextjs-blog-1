@@ -76,7 +76,7 @@ const Footer = () => {
                             className="block h-8 w-auto md:h-10 w-auto mr-5 md:mr-10"
                             src={Logo}
                             alt="Flotiq"
-                            innerRef={logoRef}
+                            ref={logoRef}
                             width="138px"
                             height="50px"
                         />
