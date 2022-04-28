@@ -11,6 +11,7 @@ const CustomCard = ({ title, excerpt, date, readingTime, tags, withTags = false,
     const ref = useRef();
     return (
         <Link href={`/post/${encodeURIComponent(slug)}`} passHref>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a>
                 <Card
                     horizontal
