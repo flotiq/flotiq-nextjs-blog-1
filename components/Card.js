@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Card } from 'flotiq-components-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,7 +8,6 @@ import config from '../lib/config';
 
 const CustomCard = ({ title, excerpt, date, readingTime, tags, withTags = false, image, slug }) => {
     const imageName = (image) && image.substring(image.lastIndexOf('/') + 1);
-    const ref = useRef();
     return (
         <Link href={`/post/${encodeURIComponent(slug)}`} passHref>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -49,7 +48,6 @@ const CustomCard = ({ title, excerpt, date, readingTime, tags, withTags = false,
                         <Image
                             alt={title}
                             src={`${config.api.url}/image/0x0/${imageName}.jpg`}
-                            ref={ref}
                             width={700}
                             height={300}
                         />
