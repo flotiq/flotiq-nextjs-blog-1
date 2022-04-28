@@ -1,16 +1,10 @@
-import '../styles/globals.css'
-import Head from 'next/head'
+import '../styles/globals.css';
+import React from 'react';
 
-function MyApp({ Component, pageProps }) {
-    return (
-        <div className="bg-dark-blue">
-            <Head>
-                <title>Next.js</title>
-                <link rel="icon" href="/favicon.png" />
-            </Head>
-            <Component {...pageProps} />
-        </div>
-    )
-}
+const MyApp = ({ Component, pageProps }) => (
+    <div>
+        <Component {...pageProps} />
+    </div>
+);
 
-export default MyApp
+export default MyApp;

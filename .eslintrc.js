@@ -12,15 +12,13 @@ module.exports = {
         },
     },
     extends: [
-        'react-app',
-        'plugin:react/recommended',
         'airbnb',
         'eslint:recommended',
+        'next',
     ],
     plugins: [
         'jsx-a11y',
         'react-hooks',
-        'flowtype',
         'import',
     ],
     rules: {
