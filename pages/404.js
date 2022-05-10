@@ -10,7 +10,9 @@ const NotFoundPage = () => {
     return (
         <Layout title={title}>
             <main className="flex flex-col h-screen justify-center items-center">
-                <Header text="Page not found, sorry" alignment="center" additionalClasses={['my-20', '!py-20']} />
+                <Header alignment="center" additionalClasses={['my-20', '!py-20']}>
+                    Page not found, sorry
+                </Header>
                 <div className="text-center my-20 py-20">
                     <Link href="/" passHref ref={ref}>
                         <Button ref={ref} variant="secondary" label="Go back to index" />
