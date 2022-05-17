@@ -6,7 +6,7 @@ Next JS starter for blog with Flotiq source
 ===========================
 
 Kick off your project with this blog boilerplate. This starter ships with the main Next JS configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
+Check our live demo: [https://flotiq-nextjs-blog.netlify.app](https://flotiq-nextjs-blog.netlify.app) 
 ## Quick start
 
 1. **Start the project from template using npx**
@@ -71,6 +71,13 @@ Kick off your project with this blog boilerplate. This starter ships with the ma
 Deploy this starter with one click on [Vercel](https://vercel.com/):
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fflotiq%2Fflotiq-nextjs-blog-1)
+You can also deploy this project to [Heroku](https://www.heroku.com/) in 3 minutes:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https%3A%2F%2Fgithub.com%2Fflotiq%2Fflotiq-nextjs-blog-1)
+
+Or to [Netlify](https://www.netlify.com/):
+
+[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2Fflotiq%2Fflotiq-nextjs-blog-1)
 
 ## Learning Next.js
 
