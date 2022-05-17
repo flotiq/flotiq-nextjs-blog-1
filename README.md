@@ -71,6 +71,7 @@ Check our live demo: [https://flotiq-nextjs-blog.netlify.app](https://flotiq-nex
 Deploy this starter with one click on [Vercel](https://vercel.com/):
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fflotiq%2Fflotiq-nextjs-blog-1)
+
 You can also deploy this project to [Heroku](https://www.heroku.com/) in 3 minutes:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https%3A%2F%2Fgithub.com%2Fflotiq%2Fflotiq-nextjs-blog-1)
