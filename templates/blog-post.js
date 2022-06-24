@@ -15,8 +15,8 @@ const BlogPostTemplate = ({ post, pageContext }) => (
         additionalClass={['bg-white px-6']}
     >
         <article className="max-w-7xl mx-auto mt-20 pb-4 rounded-2xl bg-light-gray overflow-hidden">
-            {(post.headerImage && post.headerImage[0].dataUrl) && (
-                <BlogPostFeaturedImage headerImage={post.headerImage} title={post.title} />
+            {(post.headerImage && post.headerImage[0]) && (
+                <BlogPostFeaturedImage headerImage={post.headerImage[0]} title={post.title} />
             )}
             <BlogPostMetaDetails
                 date={moment(post.internal.createdAt).format(' Do MMMM yyyy')}
