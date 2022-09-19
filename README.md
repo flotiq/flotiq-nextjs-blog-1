@@ -7,64 +7,62 @@ Next JS starter for blog with Flotiq source
 
 Kick off your project with this blog boilerplate. This starter ships with the main Next JS configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 Check our live demo: [https://flotiq-nextjs-blog.netlify.app](https://flotiq-nextjs-blog.netlify.app) 
-## Quick start
 
-1. **Start the project from template using npx**
+## Quick start using npx
 
-    ```bash
-    git clone https://github.com/flotiq/flotiq-nextjs-blog-1 flotiq-nextjs-blog-1
-    ```
-2. **Import example data from starter to Flotiq**
-   
-   ```bash
-   npm i -g flotiq-cli
-   cd flotiq-nextjs-blog-1
-   flotiq import . [flotiqApiKey]
-   ```
-   _Note: You need to put your Read and write API key as the `flotiqApiKey` for import to work, You don't need any content types in your account._
+```bash
+git clone https://github.com/flotiq/flotiq-nextjs-blog-1 flotiq-nextjs-blog-1
+```
 
-3. **Configure application**
+**Import example data from starter to Flotiq**
 
-   The next step is to configure our application to know from where it has to fetch the data.
+```bash
+npm i -g flotiq-cli
+cd flotiq-nextjs-blog-1
+flotiq import . [flotiqApiKey]
+```
+_Note: You need to put your Read and write API key as the `flotiqApiKey` for import to work, You don't need any content types in your account._
 
-   Copy `.env.dist` as `.env.local`
-   
-   ```bash
-   cp .env.dist .env.local
-   ```
- 
-   and add api key's:
+## Configuration
 
-    ```
-    FLOTIQ_API_KEY=YOUR FLOTIQ API KEY
-    GA_TRACKING_ID=YOUR GA API KEY
-    ```
+The next step is to configure our application to know from where it has to fetch the data.
 
-4. **Install dependencies**
+Copy `.env.dist` as `.env.local`
 
-   Navigate into your new site’s directory and run
+```bash
+cp .env.dist .env.local
+```
 
-   ```bash
-   yarn install
-   ```
-   
-5. **Start developing.**
+and add api key's:
 
-   Navigate into your new site’s directory and start it up.
+```
+FLOTIQ_API_KEY=YOUR FLOTIQ API KEY
+GA_TRACKING_ID=YOUR GA API KEY
+```
 
-    ```shell
-    yarn dev
-    ```
+**Install dependencies**
 
-6. **Open the source code and start editing!**
+Navigate into your new site’s directory and run
 
-   Your site is now running at `http://localhost:3000`!
+```bash
+yarn install
+```
 
-   Open the `flotiq-nextjs-blog-1` directory in your code editor of choice and edit `pages/[pages].js`. Save your changes and the browser will update in real time!
+## Developing
 
-7. **Manage your content using Flotiq editor**
+Navigate into your new site’s directory and start it up.
 
-   You can now easily manage your content using [Flotiq editor](https://editor.flotiq.com)
+```shell
+yarn dev
+```
+
+Your site is now running at `http://localhost:3000`!
+
+Open the `flotiq-nextjs-blog-1` directory in your code editor of choice and edit `pages/[pages].js`. Save your changes and the browser will update in real time!
+
+## Manage your content using Flotiq editor
+
+You can now easily manage your content using [Flotiq editor](https://editor.flotiq.com)
 
 ## Deploy
 
