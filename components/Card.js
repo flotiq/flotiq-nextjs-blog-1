@@ -43,7 +43,7 @@ const CustomCard = ({ title, excerpt, date, readingTime, tags, withTags = false,
                         </div>
                     </div>
                 </Card.Body>
-                {image 
+                {image
                 && (
                     <div className="lg:basis-3/5 order-1 lg:order-2 w-full block leading-[0]">
                         <Image
