@@ -43,14 +43,17 @@ const CustomCard = ({ title, excerpt, date, readingTime, tags, withTags = false,
                         </div>
                     </div>
                 </Card.Body>
-                <div className="lg:basis-3/5 order-1 lg:order-2 w-full block leading-[0]">
-                    <Image
-                        alt={title}
-                        src={FlotiqImage.getSrc(image, 875, 480)}
-                        width="875"
-                        height="480"
-                    />
-                </div>
+                {image
+                && (
+                    <div className="lg:basis-3/5 order-1 lg:order-2 w-full block leading-[0]">
+                        <Image
+                            alt={title}
+                            src={FlotiqImage.getSrc(image, 875, 480)}
+                            width="875"
+                            height="480"
+                        />
+                    </div>
+                )}
             </Card>
         </a>
     </Link>
