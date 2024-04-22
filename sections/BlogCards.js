@@ -12,7 +12,7 @@ const BlogCards = ({ posts }) => (
                 tags={['#photo', '#cookig', '#food']}
                 date={moment(post.internal.createdAt).format('Do MMMM yyyy')}
                 readingTime="7 min"
-                image={post.headerImage[0]}
+                image={post.headerImage?.[0]}
                 slug={post.slug}
             />
         ))}
