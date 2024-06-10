@@ -8,61 +8,97 @@ Next JS starter for blog with Flotiq source
 Kick off your project with this blog boilerplate. This starter ships with the main Next JS configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 Check our live demo: [https://flotiq-nextjs-blog.netlify.app](https://flotiq-nextjs-blog.netlify.app) 
 
-## Quick start using npx
+## Quick start
 
-```bash
-git clone https://github.com/flotiq/flotiq-nextjs-blog-1 flotiq-nextjs-blog-1
-```
+1. **Start the project from template using npx**
 
-**Import example data from starter to Flotiq**
+    ```bash
+    git clone https://github.com/flotiq/flotiq-nextjs-blog-1 flotiq-nextjs-blog-1
+    ```
 
-```bash
-npm i -g flotiq-cli
-cd flotiq-nextjs-blog-1
-flotiq import . [flotiqApiKey]
-```
-_Note: You need to put your Read and write API key as the `flotiqApiKey` for import to work, You don't need any content types in your account._
+2. **Import example data from starter to Flotiq**
 
-## Configuration
+    ```bash
+    npm i -g flotiq-cli
+    cd flotiq-nextjs-blog-1
+    flotiq import . [flotiqApiKey]
+    ```
+    _Note: You need to put your Read and write API key as the `flotiqApiKey` for import to work, You don't need any content types in your account._
 
-The next step is to configure our application to know from where it has to fetch the data.
 
-Copy `.env.dist` as `.env.local`
+3. **Configure application**
 
-```bash
-cp .env.dist .env.local
-```
+    The next step is to configure our application to know from where it has to fetch the data.
+    
+    Flotiq provides a tool named [flotiq-setup](https://github.com/flotiq/flotiq-setup)
+    for automatically populating`.env` files with your Flotiq API keys.
+    
+    ```bash
+    npx flotiq-setup
+    ```
+    
+    After executing this command, a browser window will open with the Flotiq login screen. Upon successful authentication,
+    the command will automatically generate appropriately filled `.env` files for you.
 
-and add api key's:
+    If you want to use Google Analytics functionality add
+    `NEXT_PUBLIC_GA_ID=123` to your `.env` file.
 
-```
-FLOTIQ_API_KEY=YOUR FLOTIQ API KEY
-GA_TRACKING_ID=YOUR GA API KEY
-```
+    _Note: If there are existing .env files in the project, flotiq-setup may overwrite them._
 
-**Install dependencies**
 
-Navigate into your new site’s directory and run
+4. **Install dependencies**
 
-```bash
-yarn install
-```
+    Navigate into your new site’s directory and run
+    
+    ```bash
+    yarn install
+    ```
+   
+5. **Flotiq codegen - install SDK**
+    
+    This package simplifies JavaScript Fetch API integration for your Flotiq project, tailored to your Flotiq account
+    data. To build your customized API package, just run this command:
+    
+    ```bash
+    npx flotiq-codegen-ts generate --compiled-js
+    ```
+    
+    Now, in your project, you can use the `FlotiqApi` class for easy and convenient communication with the Flotiq API.
+    
+    ```javascript
+    import { FlotiqApi } from '../flotiqApi/index';
+    const api = new FlotiqApi(apiKey);
+    
+    const postItem = await flotiq.BlogpostAPI.get({ id: '123' });
+    const title = postItem.title;
+    // ...
+    ```
 
-## Developing
+    Examples of its usage can be found in the `lib/blogpost.js` file of this project or can be explored in the
+    [flotiq-codegen-ts repository](https://github.com/flotiq/flotiq-codegen-ts)
+    
+    _Note: If you make any changes (additions or deletions) to the `content type definitions` in your Flotiq account, you will need to rerun `npx flotiq-codegen-ts generate --compiled-js` command._
 
-Navigate into your new site’s directory and start it up.
 
-```shell
-yarn dev
-```
+6. **Developing**
+    
+    Navigate into your new site’s directory and start it up.
+    
+    ```shell
+    yarn dev
+    ```
+    
+    Your site is now running at `http://localhost:3000`!
+    
+    Open the `flotiq-nextjs-blog-1` directory in your code editor of choice and edit `pages/[pages].js`. Save your changes and the browser will update in real time!
 
-Your site is now running at `http://localhost:3000`!
 
-Open the `flotiq-nextjs-blog-1` directory in your code editor of choice and edit `pages/[pages].js`. Save your changes and the browser will update in real time!
+7. **Manage your content using Flotiq editor**
+    
+    You can now easily manage your content using [Flotiq editor](https://editor.flotiq.com)
 
-## Manage your content using Flotiq editor
-
-You can now easily manage your content using [Flotiq editor](https://editor.flotiq.com)
+    _Note: If you are using `FlotiqApi` generated from `flotiq-codegen-ts` remember to rerun `npx flotiq-codegen-ts generate --compiled-js`
+    command after changes (additions or edits) to the `content type definitions` in your Flotiq_
 
 ## Deploy
 

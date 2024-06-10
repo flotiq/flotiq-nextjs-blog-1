@@ -22,9 +22,16 @@ export async function getStaticProps({ params }) {
     const nextPost = await getNextBlogPost(createdAt || null);
     const nextPostSlug = (nextPost && nextPost.data && nextPost.data[0]) ? nextPost.data[0].slug : null;
 
+    /**
+     *  This function is used to sanitize the API responses, without it the getStaticProps()
+     *  methods are not working properly as Next tries to serialize values which are possibly
+     *  `undefined` (which results in an error).
+     */
+    const sanitizedPostBySlug = JSON.parse(JSON.stringify(postBySlug));
+
     return {
         props: {
-            post: postBySlug.data[0],
+            post: sanitizedPostBySlug.data[0],
             pageContext: {
                 previous: previousPostSlug,
                 next: nextPostSlug,

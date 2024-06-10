@@ -24,13 +24,21 @@ const Home = ({ posts, pageContext }) => (
 );
 
 export async function getStaticProps({ params }) {
-    const fetchPost = await getBlogPosts(params.page, config.blog.postPerPage);
+    const posts = await getBlogPosts(params.page, config.blog.postPerPage);
+
+    /**
+     *  This function is used to sanitize the API responses, without it the getStaticProps()
+     *  methods are not working properly as Next tries to serialize values which are possibly
+     *  `undefined` (which results in an error).
+     */
+    const sanitizedPosts = JSON.parse(JSON.stringify(posts));
+
     return {
         props: {
-            posts: fetchPost.data,
+            posts: sanitizedPosts.data,
             pageContext: {
-                currentPage: params.page,
-                numPages: fetchPost.total_pages,
+                currentPage: sanitizedPosts.current_page,
+                numPages: sanitizedPosts.total_pages,
             },
         },
     };
