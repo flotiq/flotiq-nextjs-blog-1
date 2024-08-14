@@ -19,7 +19,7 @@
     "@babel/preset-react": "^7.24.7",
     "@fontsource/sora": "^5.0.18",
     "@headlessui/react": "^1.7.19",
-    "@heroicons/react": "v1",
+    "@heroicons/react": "v2",
     "@tailwindcss/typography": "^0.5.14",
     "@zeit/next-source-maps": "^0.0.3",
     "dotenv": "^16.4.5",
