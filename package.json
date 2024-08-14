@@ -16,6 +16,7 @@
     "@babel/eslint-parser": "^7.25.1",
     "@babel/plugin-syntax-flow": "^7.24.7",
     "@babel/plugin-transform-react-jsx": "^7.25.2",
+    "@babel/preset-react": "^7.24.7",
     "@fontsource/sora": "^5.0.18",
     "@headlessui/react": "^1.7.19",
     "@heroicons/react": "v1",
