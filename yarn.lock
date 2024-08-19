@@ -1219,10 +1219,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@fontsource/sora@^5.0.18":
-  version "5.0.18"
-  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-5.0.18.tgz#737d239accb9669593eb1ab62bd2060d05cbdcd9"
-  integrity sha512-ti9nr3/pRdxUVSAXdO5wX92KFFH55KwKgKX45dIA9DJcpV+tGgATdu14RYSbg1wGwxjL7z9tWHapcZJdjPp1UQ==
+"@fontsource/sora@^5.0.19":
+  version "5.0.19"
+  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-5.0.19.tgz#1873263f431aac0fcbf9420cd38cdd78fcbe906b"
+  integrity sha512-UonP14EH8X0WgKjTbOQsmQAL862O4wvi4i4+EDN/gUutMau6nOjrMutn8XiLyRm98cjUbijMXhJ4NcOI+MBFNw==
 
 "@headlessui/react@^1.7.19":
   version "1.7.19"
