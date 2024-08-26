@@ -12,7 +12,6 @@ const BlogCards = ({ posts, page, numOfPages }) => (
                     key={post.id}
                     title={post.title}
                     excerpt={post.excerpt}
-                    tags={['#photo', '#cookig', '#food']}
                     date={moment(post.internal.createdAt).format(
                         'Do MMMM yyyy'
                     )}
