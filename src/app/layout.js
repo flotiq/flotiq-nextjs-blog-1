@@ -1,3 +1,4 @@
+import { GoogleTagManager } from '@next/third-parties/google';
 import './globals.css';
 
 export const viewport = {
@@ -17,6 +18,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+            {process.env.NEXT_PUBLIC_GA_ID && (
+                <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID} />
+            )}
             <body className="font-sora">{children}</body>
         </html>
     );
