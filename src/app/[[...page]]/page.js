@@ -13,11 +13,12 @@ export async function generateStaticParams() {
 }
 
 export default async function Home({ params }) {
-    if (params.page?.length > 1) {
+    const page = !params?.page ? 1 : +params.page[0];
+    if (params.page?.length > 1 || !page) {
         return notFound();
     }
 
-    const reponse = await getBlogPosts(params.page?.[0]);
+    const reponse = await getBlogPosts(page);
 
     if (params.page > reponse.total_pages) {
         return notFound();

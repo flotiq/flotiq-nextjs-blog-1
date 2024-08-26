@@ -1,9 +1,16 @@
 import './globals.css';
 
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1,
+};
+
 export const metadata = {
-    title: 'Flotiq NextJs starter for blog',
+    title: {
+        template: 'Flotiq NextJs starter for blog | %s',
+        default: 'Flotiq NextJs starter for blog',
+    },
     description: 'Flotiq NextJs starter for blog',
-    viewport: 'initial-scale=1.0, width=device-width',
     openGraph: { title: 'Flotiq NextJs starter for blog' },
 };
 

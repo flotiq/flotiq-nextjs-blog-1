@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const BlogPostNavigation = ({
@@ -15,7 +16,7 @@ const BlogPostNavigation = ({
     >
         <div className="-mt-px w-0 flex-1 flex">
             {previousSlug && (
-                <a
+                <Link
                     href={`/post/${encodeURIComponent(previousSlug)}`}
                     className="border-t-2 border-transparent pt-4 pr-1
                                 inline-flex items-center text-sm md:text-lg font-medium hover:text-secondary"
@@ -25,14 +26,14 @@ const BlogPostNavigation = ({
                         aria-hidden="true"
                     />
                     {prevText}
-                </a>
+                </Link>
             )}
         </div>
         <div className="-mt-px w-0 flex-1 flex justify-end">
             {nextSlug && (
-                <a
+                <Link
                     href={`/post/${encodeURIComponent(nextSlug)}`}
-                    className="border-t-2 border-transparent pt-4 pl-1
+                    className="border-t-2 border-transparent pt-4 pr-1
                             inline-flex items-center text-sm md:text-lg font-medium hover:text-secondary"
                 >
                     {nextText}
@@ -40,7 +41,7 @@ const BlogPostNavigation = ({
                         className="ml-2 h-5 md:h-7 w-5 md:w-7"
                         aria-hidden="true"
                     />
-                </a>
+                </Link>
             )}
         </div>
     </nav>

@@ -41,8 +41,8 @@ const Header = () => (
                                         className="block h-8 md:h-12 w-auto cursor-pointer"
                                         src={Logo}
                                         alt="Flotiq"
-                                        width="138px"
-                                        height="50px"
+                                        width={138}
+                                        height={50}
                                     />
                                 </Link>
                             </div>
@@ -54,16 +54,7 @@ const Header = () => (
                             <div className="flex-shrink-0">
                                 <Link
                                     href="mailto:hello@flotiq.com"
-                                    className="
-                                        relative
-                                        inline-flex
-                                        items-center
-                                        px-4
-                                        py-2
-                                        text-sm
-                                        font-regular
-                                        underline
-                                        hover:text-secondary"
+                                    className="relative inline-flex items-center px-4 py-2 font-regular underline hover:text-secondary"
                                 >
                                     Say Hi!
                                 </Link>

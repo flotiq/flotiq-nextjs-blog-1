@@ -76,8 +76,8 @@ const Footer = () => (
                         className="block h-8 w-auto md:h-10 w-auto mr-5 md:mr-10"
                         src={Logo}
                         alt="Flotiq"
-                        width="138px"
-                        height="50px"
+                        width={138}
+                        height={50}
                     />
                 </Link>
                 <div className="flex items-center justify-center space-x-4 md:space-x-3">

@@ -1,18 +1,19 @@
 'use client';
 
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { Button, Header as FlotiqHeader } from 'flotiq-components-react';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
-export const metadata = {
-    title: 'Page not found',
-    openGraph: { title: 'Page not found' },
-};
-
 export default function NotFound() {
     const ref = useRef();
+
+    useEffect(() => {
+        // https://github.com/vercel/next.js/issues/45620
+        document.title = 'Page not found';
+    }, []);
+
     return (
         <main className="px-4">
             <Header />

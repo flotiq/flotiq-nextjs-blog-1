@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import moment from 'moment';
 import {
     getBlogPostBySlug,
+    getBlogPosts,
     getNextBlogPost,
     getPreviousBlogPost,
 } from '@/lib/blogPosts';
@@ -11,12 +12,21 @@ import BlogPostAuthor from '@/components/blog-post/BlogPostAuthor';
 import BlogPostNavigation from '@/components/blog-post/BlogPostNavigation';
 import BlogPostContent from '@/components/blog-post/BlogPostContent';
 
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+    const posts = await getBlogPosts(1, 10000);
+    const postData = posts.data;
+    return postData.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata({ params }) {
+    const postBySlug = await getBlogPostBySlug(params.slug);
+    return { title: postBySlug.title, description: postBySlug.excerpt };
+}
+
 export default async function PostPage({ params }) {
     const postBySlug = await getBlogPostBySlug(params.slug);
-    if (!postBySlug) {
-        return notFound();
-    }
-
     const createdAt = postBySlug.internal.createdAt;
     const previousPost = await getPreviousBlogPost(createdAt || null);
     const nextPost = await getNextBlogPost(createdAt || null);

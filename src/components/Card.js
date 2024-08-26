@@ -46,8 +46,8 @@ const CustomCard = ({ title, excerpt, date, readingTime, image, slug }) => (
                     <Image
                         alt={title}
                         src={image && getMediaUrl(image, 875, 480)}
-                        width="875"
-                        height="480"
+                        width={875}
+                        height={480}
                     />
                 </div>
             )}
