@@ -3,15 +3,6 @@ import BlogCards from '@/sections/BlogCards';
 import { getBlogPosts } from '@/lib/blogPosts';
 import { notFound } from 'next/navigation';
 
-export async function generateStaticParams() {
-    const reponse = await getBlogPosts(1, 10000);
-    const pages = [];
-    for (let page = 0; page < reponse.total_pages; page += 1) {
-        pages.push(page + 1);
-    }
-    return pages;
-}
-
 export default async function Home({ params }) {
     const page = !params?.page ? 1 : +params.page[0];
     if (params.page?.length > 1 || !page) {

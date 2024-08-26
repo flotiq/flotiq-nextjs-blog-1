@@ -3,20 +3,19 @@
 import Link from 'next/link';
 import { useRef, useEffect } from 'react';
 import { Button, Header as FlotiqHeader } from 'flotiq-components-react';
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
+import LayoutTemplate from '@/templates/LayoutTemplate';
 
 export default function NotFound() {
     const ref = useRef();
 
     useEffect(() => {
+        // Due to the issue, the title has to be changed dynamically
         // https://github.com/vercel/next.js/issues/45620
         document.title = 'Page not found';
     }, []);
 
     return (
-        <main className="px-4">
-            <Header />
+        <LayoutTemplate className="px-4">
             <div className="flex flex-col h-screen justify-center items-center">
                 <FlotiqHeader
                     alignment="center"
@@ -34,7 +33,6 @@ export default function NotFound() {
                     </Link>
                 </div>
             </div>
-            <Footer />
-        </main>
+        </LayoutTemplate>
     );
 }

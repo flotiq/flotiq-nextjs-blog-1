@@ -1,12 +1,9 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
+import LayoutTemplate from '@/templates/LayoutTemplate';
 
 export default function Layout({ children }) {
     return (
-        <main className="px-4 bg-light-gray">
-            <Header />
+        <LayoutTemplate className="px-4 bg-light-gray">
             {children}
-            <Footer />
-        </main>
+        </LayoutTemplate>
     );
 }
