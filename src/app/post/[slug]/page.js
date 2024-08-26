@@ -1,4 +1,3 @@
-import { notFound } from 'next/navigation';
 import moment from 'moment';
 import {
     getBlogPostBySlug,

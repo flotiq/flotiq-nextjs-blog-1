@@ -6,12 +6,12 @@ const DEFAULT_DIRECTION = 'desc';
 const DEFAULT_LIMIT = 6;
 const api = new FlotiqApi(apiKey);
 
-const getPost = async (filters, order) => {
+const getPost = async (filters, orderDirection) => {
     const postReponse = await api.BlogPostAPI.list({
         page: 1,
         limit: 1,
         order_by: DEFAULT_ORDER,
-        order_direction: order || DEFAULT_DIRECTION,
+        order_direction: orderDirection || DEFAULT_DIRECTION,
         ...(filters ? { filters } : {}),
     });
     return postReponse?.data?.[0];

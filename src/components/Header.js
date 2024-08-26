@@ -2,7 +2,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Disclosure } from '@headlessui/react';
+import {
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+} from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Logo from '../../public/kyan-logo.png';
 
@@ -14,7 +18,7 @@ const Header = () => (
                     <div className="flex justify-between h-auto flex-wrap md:flex-nowrap">
                         <div className="flex grow md:grow-0">
                             <div className="-ml-2 mr-2 flex items-center md:hidden">
-                                <Disclosure.Button
+                                <DisclosureButton
                                     className="inline-flex items-center justify-center p-2 rounded-md text-gray-400
                                         hover:text-gray-500 hover:bg-gray-100 focus:outline-none
                                         focus:ring-2 focus:ring-inset focus:ring-indigo-500"
@@ -33,7 +37,7 @@ const Header = () => (
                                             aria-hidden="true"
                                         />
                                     )}
-                                </Disclosure.Button>
+                                </DisclosureButton>
                             </div>
                             <div className="flex-shrink-0 flex grow md:grow-0 items-center justify-center">
                                 <Link href="/" passHref>
@@ -66,13 +70,13 @@ const Header = () => (
                     </div>
                 </div>
 
-                <Disclosure.Panel className="md:hidden">
+                <DisclosurePanel className="md:hidden">
                     <div className="pt-4 pb-3 border-t border-gray-200">
                         <div className="flex items-center px-4 sm:px-6">
                             <p>Menu content here...</p>
                         </div>
                     </div>
-                </Disclosure.Panel>
+                </DisclosurePanel>
             </>
         )}
     </Disclosure>

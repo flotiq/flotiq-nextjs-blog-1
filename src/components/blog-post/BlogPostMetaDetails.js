@@ -1,6 +1,6 @@
 import BlogPostMetaDetailsPresentation from './BlogPostMetaDetailsPresentation';
 
-const BlogPostMetaDetails = ({ date, readingTime, tags, additionalClass }) => (
+const BlogPostMetaDetails = ({ date, readingTime, additionalClass }) => (
     <div
         className={[
             'px-6 md:px-12 flex flex-wrap ' +
