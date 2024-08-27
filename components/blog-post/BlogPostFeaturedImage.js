@@ -9,8 +9,8 @@ const BlogPostFeaturedImage = ({ headerImage, title }) => (
             alt={title}
             src={FlotiqImage.getSrc(headerImage, 1280, 718)}
             className="w-full rounded-xl"
-            width="1280px"
-            height="718px"
+            width="1280"
+            height="718"
         />
     </div>
 );
