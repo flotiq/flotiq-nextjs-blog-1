@@ -27,5 +27,5 @@ jobs:
       - run: yarn build
         env:
           FLOTIQ_API_KEY: ${{ secrets.FLOTIQ_API_KEY }}
-          FLOTIQ_API_URL: ${{ secrets.FLOTIQ_API_URL }}
+          NEXT_PUBLIC_FLOTIQ_API_URL: ${{ secrets.NEXT_PUBLIC_FLOTIQ_API_URL }}
 
