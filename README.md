@@ -21,7 +21,7 @@ Check our live demo: [https://flotiq-nextjs-blog-1.netlify.app](https://flotiq-n
     ```bash
     npm i -g flotiq-cli
     cd flotiq-nextjs-blog-1
-    flotiq import . [flotiqApiKey]
+    flotiq import .flotiq [flotiqApiKey]
     ```
     _Note: You need to put your Read and write API key as the `flotiqApiKey` for import to work, You don't need any content types in your account._
 
@@ -125,4 +125,3 @@ Looking for more guidance? Full documentation for Next.js lives [on the website]
 If you wish to talk with us about this project, feel free to hop on our [![Discord Chat](https://img.shields.io/discord/682699728454025410.svg)](https://discord.gg/FwXcHnX).
 
 If you found a bug, please report it in [issues](https://github.com/flotiq/flotiq-nextjs-blog-1/issues).
-
