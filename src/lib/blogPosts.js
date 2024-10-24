@@ -1,4 +1,4 @@
-import { FlotiqApi } from '../../flotiqApi';
+import { FlotiqApi } from 'flotiq-api-ts';
 
 const apiKey = process.env.FLOTIQ_API_KEY;
 const DEFAULT_ORDER = 'internal.createdAt';

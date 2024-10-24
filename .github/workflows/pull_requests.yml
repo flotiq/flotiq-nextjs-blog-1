@@ -23,6 +23,8 @@ jobs:
       - run: npm install -g flotiq-cli
       - run: flotiq import .flotiq ${{ secrets.FLOTIQ_API_KEY }}
       - run: yarn install
+        env:
+          FLOTIQ_API_KEY: ${{ secrets.FLOTIQ_API_KEY }}
       - run: yarn build
         env:
           FLOTIQ_API_KEY: ${{ secrets.FLOTIQ_API_KEY }}
