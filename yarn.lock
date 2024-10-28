@@ -3463,10 +3463,10 @@ flatted@^3.2.9:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.3.1.tgz#21db470729a6734d4997002f439cb308987f567a"
   integrity sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==
 
-flotiq-api-ts@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/flotiq-api-ts/-/flotiq-api-ts-0.0.3.tgz#0089648c82f13edf39190c5163ed8fe37a006bc3"
-  integrity sha512-W5YDa8IhoLbmWin/AenC6fTdv1bmNGSkQXo0wszYYY+ooR5yLk4nfRxIwCSghEROAkZClBesEXl64OHUsP/GbQ==
+flotiq-api-ts@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/flotiq-api-ts/-/flotiq-api-ts-0.0.4.tgz#7b0be32c7d2dff99f5bd4756107fc4a02138339f"
+  integrity sha512-QDigEivn1JMfTWqfCZeMrp6XGvlmswoF+ImYOuEBLkTtfv8Qgp6T4dIau4F+0AWpCZXaZxzD8UFuRKMrnQkqYQ==
   dependencies:
     dotenv "^16.4.5"
     dotenv-flow "^4.1.0"
@@ -5820,6 +5820,7 @@ streamsearch@^1.1.0:
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -6512,6 +6513,7 @@ word-wrap@^1.2.5:
   integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
