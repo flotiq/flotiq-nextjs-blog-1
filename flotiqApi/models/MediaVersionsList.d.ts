@@ -50,7 +50,7 @@ export interface MediaVersionsList {
 /**
  * Check if a given object implements the MediaVersionsList interface.
  */
-export declare function instanceOfMediaVersionsList(value: object): boolean;
+export declare function instanceOfMediaVersionsList(value: object): value is MediaVersionsList;
 export declare function MediaVersionsListFromJSON(json: any): MediaVersionsList;
 export declare function MediaVersionsListFromJSONTyped(json: any, ignoreDiscriminator: boolean): MediaVersionsList;
 export declare function MediaVersionsListToJSON(value?: MediaVersionsList | null): any;

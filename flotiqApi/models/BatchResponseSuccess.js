@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BatchResponseSuccessToJSON = exports.BatchResponseSuccessFromJSONTyped = exports.BatchResponseSuccessFromJSON = exports.instanceOfBatchResponseSuccess = void 0;
+exports.instanceOfBatchResponseSuccess = instanceOfBatchResponseSuccess;
+exports.BatchResponseSuccessFromJSON = BatchResponseSuccessFromJSON;
+exports.BatchResponseSuccessFromJSONTyped = BatchResponseSuccessFromJSONTyped;
+exports.BatchResponseSuccessToJSON = BatchResponseSuccessToJSON;
 /**
  * Check if a given object implements the BatchResponseSuccess interface.
  */
 function instanceOfBatchResponseSuccess(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BatchResponseSuccess' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBatchResponseSuccess = instanceOfBatchResponseSuccess;
 function BatchResponseSuccessFromJSON(json) {
     return BatchResponseSuccessFromJSONTyped(json, false);
 }
-exports.BatchResponseSuccessFromJSON = BatchResponseSuccessFromJSON;
 function BatchResponseSuccessFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -36,7 +46,6 @@ function BatchResponseSuccessFromJSONTyped(json, ignoreDiscriminator) {
         'errors': json['errors'] == null ? undefined : json['errors'],
     };
 }
-exports.BatchResponseSuccessFromJSONTyped = BatchResponseSuccessFromJSONTyped;
 function BatchResponseSuccessToJSON(value) {
     if (value == null) {
         return value;
@@ -48,4 +57,3 @@ function BatchResponseSuccessToJSON(value) {
         'errors': value['errors'],
     };
 }
-exports.BatchResponseSuccessToJSON = BatchResponseSuccessToJSON;

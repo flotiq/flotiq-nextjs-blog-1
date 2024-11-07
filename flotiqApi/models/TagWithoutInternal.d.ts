@@ -31,7 +31,7 @@ export interface TagWithoutInternal {
 /**
  * Check if a given object implements the TagWithoutInternal interface.
  */
-export declare function instanceOfTagWithoutInternal(value: object): boolean;
+export declare function instanceOfTagWithoutInternal(value: object): value is TagWithoutInternal;
 export declare function TagWithoutInternalFromJSON(json: any): TagWithoutInternal;
 export declare function TagWithoutInternalFromJSONTyped(json: any, ignoreDiscriminator: boolean): TagWithoutInternal;
 export declare function TagWithoutInternalToJSON(value?: TagWithoutInternal | null): any;

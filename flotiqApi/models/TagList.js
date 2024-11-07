@@ -13,27 +13,37 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TagListToJSON = exports.TagListFromJSONTyped = exports.TagListFromJSON = exports.instanceOfTagList = void 0;
-var Tag_1 = require("./Tag");
+exports.instanceOfTagList = instanceOfTagList;
+exports.TagListFromJSON = TagListFromJSON;
+exports.TagListFromJSONTyped = TagListFromJSONTyped;
+exports.TagListToJSON = TagListToJSON;
+const Tag_1 = require("./Tag");
 /**
  * Check if a given object implements the TagList interface.
  */
 function instanceOfTagList(value) {
-    if (!('total_count' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'TagList' === typeSlug;
+    }
+    if (!('total_count' in value) || value['total_count'] === undefined)
         return false;
-    if (!('count' in value))
+    if (!('count' in value) || value['count'] === undefined)
         return false;
-    if (!('total_pages' in value))
+    if (!('total_pages' in value) || value['total_pages'] === undefined)
         return false;
-    if (!('current_page' in value))
+    if (!('current_page' in value) || value['current_page'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfTagList = instanceOfTagList;
 function TagListFromJSON(json) {
     return TagListFromJSONTyped(json, false);
 }
-exports.TagListFromJSON = TagListFromJSON;
 function TagListFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -46,7 +56,6 @@ function TagListFromJSONTyped(json, ignoreDiscriminator) {
         'data': json['data'] == null ? undefined : (json['data'].map(Tag_1.TagFromJSON)),
     };
 }
-exports.TagListFromJSONTyped = TagListFromJSONTyped;
 function TagListToJSON(value) {
     if (value == null) {
         return value;
@@ -59,4 +68,3 @@ function TagListToJSON(value) {
         'data': value['data'] == null ? undefined : (value['data'].map(Tag_1.TagToJSON)),
     };
 }
-exports.TagListToJSON = TagListToJSON;

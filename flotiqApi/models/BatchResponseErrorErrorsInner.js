@@ -13,19 +13,29 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BatchResponseErrorErrorsInnerToJSON = exports.BatchResponseErrorErrorsInnerFromJSONTyped = exports.BatchResponseErrorErrorsInnerFromJSON = exports.instanceOfBatchResponseErrorErrorsInner = void 0;
-var BatchResponseErrorErrorsInnerErrors_1 = require("./BatchResponseErrorErrorsInnerErrors");
+exports.instanceOfBatchResponseErrorErrorsInner = instanceOfBatchResponseErrorErrorsInner;
+exports.BatchResponseErrorErrorsInnerFromJSON = BatchResponseErrorErrorsInnerFromJSON;
+exports.BatchResponseErrorErrorsInnerFromJSONTyped = BatchResponseErrorErrorsInnerFromJSONTyped;
+exports.BatchResponseErrorErrorsInnerToJSON = BatchResponseErrorErrorsInnerToJSON;
+const BatchResponseErrorErrorsInnerErrors_1 = require("./BatchResponseErrorErrorsInnerErrors");
 /**
  * Check if a given object implements the BatchResponseErrorErrorsInner interface.
  */
 function instanceOfBatchResponseErrorErrorsInner(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BatchResponseErrorErrorsInner' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBatchResponseErrorErrorsInner = instanceOfBatchResponseErrorErrorsInner;
 function BatchResponseErrorErrorsInnerFromJSON(json) {
     return BatchResponseErrorErrorsInnerFromJSONTyped(json, false);
 }
-exports.BatchResponseErrorErrorsInnerFromJSON = BatchResponseErrorErrorsInnerFromJSON;
 function BatchResponseErrorErrorsInnerFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -35,7 +45,6 @@ function BatchResponseErrorErrorsInnerFromJSONTyped(json, ignoreDiscriminator) {
         'errors': json['errors'] == null ? undefined : (0, BatchResponseErrorErrorsInnerErrors_1.BatchResponseErrorErrorsInnerErrorsFromJSON)(json['errors']),
     };
 }
-exports.BatchResponseErrorErrorsInnerFromJSONTyped = BatchResponseErrorErrorsInnerFromJSONTyped;
 function BatchResponseErrorErrorsInnerToJSON(value) {
     if (value == null) {
         return value;
@@ -45,4 +54,3 @@ function BatchResponseErrorErrorsInnerToJSON(value) {
         'errors': (0, BatchResponseErrorErrorsInnerErrors_1.BatchResponseErrorErrorsInnerErrorsToJSON)(value['errors']),
     };
 }
-exports.BatchResponseErrorErrorsInnerToJSON = BatchResponseErrorErrorsInnerToJSON;

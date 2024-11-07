@@ -31,7 +31,7 @@ export interface Model401Response {
 /**
  * Check if a given object implements the Model401Response interface.
  */
-export declare function instanceOfModel401Response(value: object): boolean;
+export declare function instanceOfModel401Response(value: object): value is Model401Response;
 export declare function Model401ResponseFromJSON(json: any): Model401Response;
 export declare function Model401ResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): Model401Response;
 export declare function Model401ResponseToJSON(value?: Model401Response | null): any;

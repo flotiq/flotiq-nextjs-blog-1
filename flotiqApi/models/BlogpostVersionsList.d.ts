@@ -50,7 +50,7 @@ export interface BlogpostVersionsList {
 /**
  * Check if a given object implements the BlogpostVersionsList interface.
  */
-export declare function instanceOfBlogpostVersionsList(value: object): boolean;
+export declare function instanceOfBlogpostVersionsList(value: object): value is BlogpostVersionsList;
 export declare function BlogpostVersionsListFromJSON(json: any): BlogpostVersionsList;
 export declare function BlogpostVersionsListFromJSONTyped(json: any, ignoreDiscriminator: boolean): BlogpostVersionsList;
 export declare function BlogpostVersionsListToJSON(value?: BlogpostVersionsList | null): any;

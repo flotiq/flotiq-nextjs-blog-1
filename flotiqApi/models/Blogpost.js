@@ -13,31 +13,41 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogpostToJSON = exports.BlogpostFromJSONTyped = exports.BlogpostFromJSON = exports.instanceOfBlogpost = void 0;
-var AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
-var BlogpostWithoutInternalAllOfContent_1 = require("./BlogpostWithoutInternalAllOfContent");
-var Media_1 = require("./Media");
+exports.instanceOfBlogpost = instanceOfBlogpost;
+exports.BlogpostFromJSON = BlogpostFromJSON;
+exports.BlogpostFromJSONTyped = BlogpostFromJSONTyped;
+exports.BlogpostToJSON = BlogpostToJSON;
+const AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
+const BlogpostWithoutInternalAllOfContent_1 = require("./BlogpostWithoutInternalAllOfContent");
+const Media_1 = require("./Media");
 /**
  * Check if a given object implements the Blogpost interface.
  */
 function instanceOfBlogpost(value) {
-    if (!('id' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'Blogpost' === typeSlug;
+    }
+    if (!('id' in value) || value['id'] === undefined)
         return false;
-    if (!('slug' in value))
+    if (!('slug' in value) || value['slug'] === undefined)
         return false;
-    if (!('title' in value))
+    if (!('title' in value) || value['title'] === undefined)
         return false;
-    if (!('content' in value))
+    if (!('content' in value) || value['content'] === undefined)
         return false;
-    if (!('excerpt' in value))
+    if (!('excerpt' in value) || value['excerpt'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfBlogpost = instanceOfBlogpost;
 function BlogpostFromJSON(json) {
     return BlogpostFromJSONTyped(json, false);
 }
-exports.BlogpostFromJSON = BlogpostFromJSON;
 function BlogpostFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -52,7 +62,6 @@ function BlogpostFromJSONTyped(json, ignoreDiscriminator) {
         'headerImage': json['headerImage'] == null ? undefined : (json['headerImage'].map(Media_1.MediaFromJSON)),
     };
 }
-exports.BlogpostFromJSONTyped = BlogpostFromJSONTyped;
 function BlogpostToJSON(value) {
     if (value == null) {
         return value;
@@ -67,4 +76,3 @@ function BlogpostToJSON(value) {
         'headerImage': value['headerImage'] == null ? undefined : (value['headerImage'].map(Media_1.MediaToJSON)),
     };
 }
-exports.BlogpostToJSON = BlogpostToJSON;

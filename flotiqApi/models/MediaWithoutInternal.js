@@ -13,42 +13,53 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MediaWithoutInternalToJSON = exports.MediaWithoutInternalFromJSONTyped = exports.MediaWithoutInternalFromJSON = exports.instanceOfMediaWithoutInternal = void 0;
-var DataSource_1 = require("./DataSource");
-var MediaWithoutInternalAllOfVariants_1 = require("./MediaWithoutInternalAllOfVariants");
+exports.instanceOfMediaWithoutInternal = instanceOfMediaWithoutInternal;
+exports.MediaWithoutInternalFromJSON = MediaWithoutInternalFromJSON;
+exports.MediaWithoutInternalFromJSONTyped = MediaWithoutInternalFromJSONTyped;
+exports.MediaWithoutInternalToJSON = MediaWithoutInternalToJSON;
+const MediaWithoutInternalAllOfVariants_1 = require("./MediaWithoutInternalAllOfVariants");
+const DataSource_1 = require("./DataSource");
 /**
  * Check if a given object implements the MediaWithoutInternal interface.
  */
 function instanceOfMediaWithoutInternal(value) {
-    if (!('id' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'MediaWithoutInternal' === typeSlug;
+    }
+    if (!('id' in value) || value['id'] === undefined)
         return false;
-    if (!('url' in value))
+    if (!('url' in value) || value['url'] === undefined)
         return false;
-    if (!('size' in value))
+    if (!('size' in value) || value['size'] === undefined)
         return false;
-    if (!('type' in value))
+    if (!('type' in value) || value['type'] === undefined)
         return false;
-    if (!('source' in value))
+    if (!('source' in value) || value['source'] === undefined)
         return false;
-    if (!('fileName' in value))
+    if (!('fileName' in value) || value['fileName'] === undefined)
         return false;
-    if (!('mimeType' in value))
+    if (!('mimeType' in value) || value['mimeType'] === undefined)
         return false;
-    if (!('extension' in value))
+    if (!('extension' in value) || value['extension'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfMediaWithoutInternal = instanceOfMediaWithoutInternal;
 function MediaWithoutInternalFromJSON(json) {
     return MediaWithoutInternalFromJSONTyped(json, false);
 }
-exports.MediaWithoutInternalFromJSON = MediaWithoutInternalFromJSON;
 function MediaWithoutInternalFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
         'id': json['id'],
+        'alt': json['alt'] == null ? undefined : json['alt'],
         'url': json['url'],
         'size': json['size'],
         'tags': json['tags'] == null ? undefined : (json['tags'].map(DataSource_1.DataSourceFromJSON)),
@@ -63,13 +74,13 @@ function MediaWithoutInternalFromJSONTyped(json, ignoreDiscriminator) {
         'externalId': json['externalId'] == null ? undefined : json['externalId'],
     };
 }
-exports.MediaWithoutInternalFromJSONTyped = MediaWithoutInternalFromJSONTyped;
 function MediaWithoutInternalToJSON(value) {
     if (value == null) {
         return value;
     }
     return {
         'id': value['id'],
+        'alt': value['alt'],
         'url': value['url'],
         'size': value['size'],
         'tags': value['tags'] == null ? undefined : (value['tags'].map(DataSource_1.DataSourceToJSON)),
@@ -84,4 +95,3 @@ function MediaWithoutInternalToJSON(value) {
         'externalId': value['externalId'],
     };
 }
-exports.MediaWithoutInternalToJSON = MediaWithoutInternalToJSON;

@@ -13,26 +13,36 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SystemListPropertiesToJSON = exports.SystemListPropertiesFromJSONTyped = exports.SystemListPropertiesFromJSON = exports.instanceOfSystemListProperties = void 0;
+exports.instanceOfSystemListProperties = instanceOfSystemListProperties;
+exports.SystemListPropertiesFromJSON = SystemListPropertiesFromJSON;
+exports.SystemListPropertiesFromJSONTyped = SystemListPropertiesFromJSONTyped;
+exports.SystemListPropertiesToJSON = SystemListPropertiesToJSON;
 /**
  * Check if a given object implements the SystemListProperties interface.
  */
 function instanceOfSystemListProperties(value) {
-    if (!('total_count' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'SystemListProperties' === typeSlug;
+    }
+    if (!('total_count' in value) || value['total_count'] === undefined)
         return false;
-    if (!('count' in value))
+    if (!('count' in value) || value['count'] === undefined)
         return false;
-    if (!('total_pages' in value))
+    if (!('total_pages' in value) || value['total_pages'] === undefined)
         return false;
-    if (!('current_page' in value))
+    if (!('current_page' in value) || value['current_page'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfSystemListProperties = instanceOfSystemListProperties;
 function SystemListPropertiesFromJSON(json) {
     return SystemListPropertiesFromJSONTyped(json, false);
 }
-exports.SystemListPropertiesFromJSON = SystemListPropertiesFromJSON;
 function SystemListPropertiesFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -44,7 +54,6 @@ function SystemListPropertiesFromJSONTyped(json, ignoreDiscriminator) {
         'current_page': json['current_page'],
     };
 }
-exports.SystemListPropertiesFromJSONTyped = SystemListPropertiesFromJSONTyped;
 function SystemListPropertiesToJSON(value) {
     if (value == null) {
         return value;
@@ -56,4 +65,3 @@ function SystemListPropertiesToJSON(value) {
         'current_page': value['current_page'],
     };
 }
-exports.SystemListPropertiesToJSON = SystemListPropertiesToJSON;

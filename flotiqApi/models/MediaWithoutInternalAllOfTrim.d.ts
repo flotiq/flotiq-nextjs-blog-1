@@ -55,7 +55,7 @@ export interface MediaWithoutInternalAllOfTrim {
 /**
  * Check if a given object implements the MediaWithoutInternalAllOfTrim interface.
  */
-export declare function instanceOfMediaWithoutInternalAllOfTrim(value: object): boolean;
+export declare function instanceOfMediaWithoutInternalAllOfTrim(value: object): value is MediaWithoutInternalAllOfTrim;
 export declare function MediaWithoutInternalAllOfTrimFromJSON(json: any): MediaWithoutInternalAllOfTrim;
 export declare function MediaWithoutInternalAllOfTrimFromJSONTyped(json: any, ignoreDiscriminator: boolean): MediaWithoutInternalAllOfTrim;
 export declare function MediaWithoutInternalAllOfTrimToJSON(value?: MediaWithoutInternalAllOfTrim | null): any;

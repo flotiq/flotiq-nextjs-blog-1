@@ -13,20 +13,30 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AbstractContentTypeSchemaDefinitionWithoutInternalToJSON = exports.AbstractContentTypeSchemaDefinitionWithoutInternalFromJSONTyped = exports.AbstractContentTypeSchemaDefinitionWithoutInternalFromJSON = exports.instanceOfAbstractContentTypeSchemaDefinitionWithoutInternal = void 0;
+exports.instanceOfAbstractContentTypeSchemaDefinitionWithoutInternal = instanceOfAbstractContentTypeSchemaDefinitionWithoutInternal;
+exports.AbstractContentTypeSchemaDefinitionWithoutInternalFromJSON = AbstractContentTypeSchemaDefinitionWithoutInternalFromJSON;
+exports.AbstractContentTypeSchemaDefinitionWithoutInternalFromJSONTyped = AbstractContentTypeSchemaDefinitionWithoutInternalFromJSONTyped;
+exports.AbstractContentTypeSchemaDefinitionWithoutInternalToJSON = AbstractContentTypeSchemaDefinitionWithoutInternalToJSON;
 /**
  * Check if a given object implements the AbstractContentTypeSchemaDefinitionWithoutInternal interface.
  */
 function instanceOfAbstractContentTypeSchemaDefinitionWithoutInternal(value) {
-    if (!('id' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'AbstractContentTypeSchemaDefinitionWithoutInternal' === typeSlug;
+    }
+    if (!('id' in value) || value['id'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfAbstractContentTypeSchemaDefinitionWithoutInternal = instanceOfAbstractContentTypeSchemaDefinitionWithoutInternal;
 function AbstractContentTypeSchemaDefinitionWithoutInternalFromJSON(json) {
     return AbstractContentTypeSchemaDefinitionWithoutInternalFromJSONTyped(json, false);
 }
-exports.AbstractContentTypeSchemaDefinitionWithoutInternalFromJSON = AbstractContentTypeSchemaDefinitionWithoutInternalFromJSON;
 function AbstractContentTypeSchemaDefinitionWithoutInternalFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -35,7 +45,6 @@ function AbstractContentTypeSchemaDefinitionWithoutInternalFromJSONTyped(json, i
         'id': json['id'],
     };
 }
-exports.AbstractContentTypeSchemaDefinitionWithoutInternalFromJSONTyped = AbstractContentTypeSchemaDefinitionWithoutInternalFromJSONTyped;
 function AbstractContentTypeSchemaDefinitionWithoutInternalToJSON(value) {
     if (value == null) {
         return value;
@@ -44,4 +53,3 @@ function AbstractContentTypeSchemaDefinitionWithoutInternalToJSON(value) {
         'id': value['id'],
     };
 }
-exports.AbstractContentTypeSchemaDefinitionWithoutInternalToJSON = AbstractContentTypeSchemaDefinitionWithoutInternalToJSON;

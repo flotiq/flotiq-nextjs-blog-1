@@ -13,37 +13,47 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MediaToJSON = exports.MediaFromJSONTyped = exports.MediaFromJSON = exports.instanceOfMedia = void 0;
-var AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
-var MediaWithoutInternalAllOfVariants_1 = require("./MediaWithoutInternalAllOfVariants");
-var Tag_1 = require("./Tag");
+exports.instanceOfMedia = instanceOfMedia;
+exports.MediaFromJSON = MediaFromJSON;
+exports.MediaFromJSONTyped = MediaFromJSONTyped;
+exports.MediaToJSON = MediaToJSON;
+const AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
+const MediaWithoutInternalAllOfVariants_1 = require("./MediaWithoutInternalAllOfVariants");
+const Tag_1 = require("./Tag");
 /**
  * Check if a given object implements the Media interface.
  */
 function instanceOfMedia(value) {
-    if (!('id' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'Media' === typeSlug;
+    }
+    if (!('id' in value) || value['id'] === undefined)
         return false;
-    if (!('url' in value))
+    if (!('url' in value) || value['url'] === undefined)
         return false;
-    if (!('size' in value))
+    if (!('size' in value) || value['size'] === undefined)
         return false;
-    if (!('type' in value))
+    if (!('type' in value) || value['type'] === undefined)
         return false;
-    if (!('source' in value))
+    if (!('source' in value) || value['source'] === undefined)
         return false;
-    if (!('fileName' in value))
+    if (!('fileName' in value) || value['fileName'] === undefined)
         return false;
-    if (!('mimeType' in value))
+    if (!('mimeType' in value) || value['mimeType'] === undefined)
         return false;
-    if (!('extension' in value))
+    if (!('extension' in value) || value['extension'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfMedia = instanceOfMedia;
 function MediaFromJSON(json) {
     return MediaFromJSONTyped(json, false);
 }
-exports.MediaFromJSON = MediaFromJSON;
 function MediaFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -51,6 +61,7 @@ function MediaFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'id': json['id'],
         'internal': json['internal'] == null ? undefined : (0, AbstractContentTypeSchemaDefinitionInternal_1.AbstractContentTypeSchemaDefinitionInternalFromJSON)(json['internal']),
+        'alt': json['alt'] == null ? undefined : json['alt'],
         'url': json['url'],
         'size': json['size'],
         'tags': json['tags'] == null ? undefined : (json['tags'].map(Tag_1.TagFromJSON)),
@@ -65,7 +76,6 @@ function MediaFromJSONTyped(json, ignoreDiscriminator) {
         'externalId': json['externalId'] == null ? undefined : json['externalId'],
     };
 }
-exports.MediaFromJSONTyped = MediaFromJSONTyped;
 function MediaToJSON(value) {
     if (value == null) {
         return value;
@@ -73,6 +83,7 @@ function MediaToJSON(value) {
     return {
         'id': value['id'],
         'internal': (0, AbstractContentTypeSchemaDefinitionInternal_1.AbstractContentTypeSchemaDefinitionInternalToJSON)(value['internal']),
+        'alt': value['alt'],
         'url': value['url'],
         'size': value['size'],
         'tags': value['tags'] == null ? undefined : (value['tags'].map(Tag_1.TagToJSON)),
@@ -87,4 +98,3 @@ function MediaToJSON(value) {
         'externalId': value['externalId'],
     };
 }
-exports.MediaToJSON = MediaToJSON;

@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { DataSource } from './DataSource';
 import type { MediaWithoutInternalAllOfVariants } from './MediaWithoutInternalAllOfVariants';
+import type { DataSource } from './DataSource';
 /**
  *
  * @export
@@ -28,6 +28,12 @@ export interface MediaWithoutInternal {
      * @type {string}
      * @memberof MediaWithoutInternal
      */
+    alt?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof MediaWithoutInternal
+     */
     url: string;
     /**
      *
@@ -40,7 +46,7 @@ export interface MediaWithoutInternal {
      * @type {Array<DataSource>}
      * @memberof MediaWithoutInternal
      */
-    tags?: Array<DataSource> | Array<DataSource>;
+    tags?: Array<DataSource>;
     /**
      *
      * @type {string}
@@ -82,7 +88,7 @@ export interface MediaWithoutInternal {
      * @type {Array<MediaWithoutInternalAllOfVariants>}
      * @memberof MediaWithoutInternal
      */
-    variants?: Array<MediaWithoutInternalAllOfVariants> | Array<DataSource>;
+    variants?: Array<MediaWithoutInternalAllOfVariants>;
     /**
      *
      * @type {string}
@@ -99,7 +105,7 @@ export interface MediaWithoutInternal {
 /**
  * Check if a given object implements the MediaWithoutInternal interface.
  */
-export declare function instanceOfMediaWithoutInternal(value: object): boolean;
+export declare function instanceOfMediaWithoutInternal(value: object): value is MediaWithoutInternal;
 export declare function MediaWithoutInternalFromJSON(json: any): MediaWithoutInternal;
 export declare function MediaWithoutInternalFromJSONTyped(json: any, ignoreDiscriminator: boolean): MediaWithoutInternal;
 export declare function MediaWithoutInternalToJSON(value?: MediaWithoutInternal | null): any;

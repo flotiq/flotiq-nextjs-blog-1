@@ -43,7 +43,7 @@ export interface BatchResponseSuccess {
 /**
  * Check if a given object implements the BatchResponseSuccess interface.
  */
-export declare function instanceOfBatchResponseSuccess(value: object): boolean;
+export declare function instanceOfBatchResponseSuccess(value: object): value is BatchResponseSuccess;
 export declare function BatchResponseSuccessFromJSON(json: any): BatchResponseSuccess;
 export declare function BatchResponseSuccessFromJSONTyped(json: any, ignoreDiscriminator: boolean): BatchResponseSuccess;
 export declare function BatchResponseSuccessToJSON(value?: BatchResponseSuccess | null): any;

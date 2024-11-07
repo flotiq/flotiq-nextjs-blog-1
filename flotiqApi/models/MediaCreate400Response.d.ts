@@ -79,7 +79,7 @@ export interface MediaCreate400Response {
 /**
  * Check if a given object implements the MediaCreate400Response interface.
  */
-export declare function instanceOfMediaCreate400Response(value: object): boolean;
+export declare function instanceOfMediaCreate400Response(value: object): value is MediaCreate400Response;
 export declare function MediaCreate400ResponseFromJSON(json: any): MediaCreate400Response;
 export declare function MediaCreate400ResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): MediaCreate400Response;
 export declare function MediaCreate400ResponseToJSON(value?: MediaCreate400Response | null): any;

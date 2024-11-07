@@ -25,7 +25,7 @@ export interface BlogpostBatchDelete400Response {
 /**
  * Check if a given object implements the BlogpostBatchDelete400Response interface.
  */
-export declare function instanceOfBlogpostBatchDelete400Response(value: object): boolean;
+export declare function instanceOfBlogpostBatchDelete400Response(value: object): value is BlogpostBatchDelete400Response;
 export declare function BlogpostBatchDelete400ResponseFromJSON(json: any): BlogpostBatchDelete400Response;
 export declare function BlogpostBatchDelete400ResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): BlogpostBatchDelete400Response;
 export declare function BlogpostBatchDelete400ResponseToJSON(value?: BlogpostBatchDelete400Response | null): any;

@@ -13,21 +13,31 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TagWithoutRequiredToJSON = exports.TagWithoutRequiredFromJSONTyped = exports.TagWithoutRequiredFromJSON = exports.instanceOfTagWithoutRequired = void 0;
-var AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
+exports.instanceOfTagWithoutRequired = instanceOfTagWithoutRequired;
+exports.TagWithoutRequiredFromJSON = TagWithoutRequiredFromJSON;
+exports.TagWithoutRequiredFromJSONTyped = TagWithoutRequiredFromJSONTyped;
+exports.TagWithoutRequiredToJSON = TagWithoutRequiredToJSON;
+const AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
 /**
  * Check if a given object implements the TagWithoutRequired interface.
  */
 function instanceOfTagWithoutRequired(value) {
-    if (!('id' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'TagWithoutRequired' === typeSlug;
+    }
+    if (!('id' in value) || value['id'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfTagWithoutRequired = instanceOfTagWithoutRequired;
 function TagWithoutRequiredFromJSON(json) {
     return TagWithoutRequiredFromJSONTyped(json, false);
 }
-exports.TagWithoutRequiredFromJSON = TagWithoutRequiredFromJSON;
 function TagWithoutRequiredFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -38,7 +48,6 @@ function TagWithoutRequiredFromJSONTyped(json, ignoreDiscriminator) {
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
-exports.TagWithoutRequiredFromJSONTyped = TagWithoutRequiredFromJSONTyped;
 function TagWithoutRequiredToJSON(value) {
     if (value == null) {
         return value;
@@ -49,4 +58,3 @@ function TagWithoutRequiredToJSON(value) {
         'name': value['name'],
     };
 }
-exports.TagWithoutRequiredToJSON = TagWithoutRequiredToJSON;

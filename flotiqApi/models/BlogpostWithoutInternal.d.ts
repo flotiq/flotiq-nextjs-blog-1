@@ -52,12 +52,12 @@ export interface BlogpostWithoutInternal {
      * @type {Array<DataSource>}
      * @memberof BlogpostWithoutInternal
      */
-    headerImage?: Array<DataSource> | Array<DataSource>;
+    headerImage?: Array<DataSource>;
 }
 /**
  * Check if a given object implements the BlogpostWithoutInternal interface.
  */
-export declare function instanceOfBlogpostWithoutInternal(value: object): boolean;
+export declare function instanceOfBlogpostWithoutInternal(value: object): value is BlogpostWithoutInternal;
 export declare function BlogpostWithoutInternalFromJSON(json: any): BlogpostWithoutInternal;
 export declare function BlogpostWithoutInternalFromJSONTyped(json: any, ignoreDiscriminator: boolean): BlogpostWithoutInternal;
 export declare function BlogpostWithoutInternalToJSON(value?: BlogpostWithoutInternal | null): any;

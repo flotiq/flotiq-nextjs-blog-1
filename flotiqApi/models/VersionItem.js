@@ -13,22 +13,32 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VersionItemToJSON = exports.VersionItemFromJSONTyped = exports.VersionItemFromJSON = exports.instanceOfVersionItem = void 0;
-var AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
-var VersionItemAllOfOwner_1 = require("./VersionItemAllOfOwner");
+exports.instanceOfVersionItem = instanceOfVersionItem;
+exports.VersionItemFromJSON = VersionItemFromJSON;
+exports.VersionItemFromJSONTyped = VersionItemFromJSONTyped;
+exports.VersionItemToJSON = VersionItemToJSON;
+const AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
+const VersionItemAllOfOwner_1 = require("./VersionItemAllOfOwner");
 /**
  * Check if a given object implements the VersionItem interface.
  */
 function instanceOfVersionItem(value) {
-    if (!('id' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'VersionItem' === typeSlug;
+    }
+    if (!('id' in value) || value['id'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfVersionItem = instanceOfVersionItem;
 function VersionItemFromJSON(json) {
     return VersionItemFromJSONTyped(json, false);
 }
-exports.VersionItemFromJSON = VersionItemFromJSON;
 function VersionItemFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -45,7 +55,6 @@ function VersionItemFromJSONTyped(json, ignoreDiscriminator) {
         'editor': json['editor'] == null ? undefined : (0, VersionItemAllOfOwner_1.VersionItemAllOfOwnerFromJSON)(json['editor']),
     };
 }
-exports.VersionItemFromJSONTyped = VersionItemFromJSONTyped;
 function VersionItemToJSON(value) {
     if (value == null) {
         return value;
@@ -62,4 +71,3 @@ function VersionItemToJSON(value) {
         'editor': (0, VersionItemAllOfOwner_1.VersionItemAllOfOwnerToJSON)(value['editor']),
     };
 }
-exports.VersionItemToJSON = VersionItemToJSON;

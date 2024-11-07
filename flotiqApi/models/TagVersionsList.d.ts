@@ -50,7 +50,7 @@ export interface TagVersionsList {
 /**
  * Check if a given object implements the TagVersionsList interface.
  */
-export declare function instanceOfTagVersionsList(value: object): boolean;
+export declare function instanceOfTagVersionsList(value: object): value is TagVersionsList;
 export declare function TagVersionsListFromJSON(json: any): TagVersionsList;
 export declare function TagVersionsListFromJSONTyped(json: any, ignoreDiscriminator: boolean): TagVersionsList;
 export declare function TagVersionsListToJSON(value?: TagVersionsList | null): any;

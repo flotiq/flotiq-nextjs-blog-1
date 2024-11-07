@@ -12,7 +12,6 @@
 import type { AbstractContentTypeSchemaDefinitionInternal } from './AbstractContentTypeSchemaDefinitionInternal';
 import type { BlogpostWithoutInternalAllOfContent } from './BlogpostWithoutInternalAllOfContent';
 import type { Media } from './Media';
-import { DataSource } from './DataSource';
 /**
  *
  * @export
@@ -60,12 +59,12 @@ export interface Blogpost {
      * @type {Array<Media>}
      * @memberof Blogpost
      */
-    headerImage?: Array<Media> | Array<DataSource>;
+    headerImage?: Array<Media>;
 }
 /**
  * Check if a given object implements the Blogpost interface.
  */
-export declare function instanceOfBlogpost(value: object): boolean;
+export declare function instanceOfBlogpost(value: object): value is Blogpost;
 export declare function BlogpostFromJSON(json: any): Blogpost;
 export declare function BlogpostFromJSONTyped(json: any, ignoreDiscriminator: boolean): Blogpost;
 export declare function BlogpostToJSON(value?: Blogpost | null): any;

@@ -39,7 +39,7 @@ export interface BlogpostWithoutInternalAllOfContentBlocks {
 /**
  * Check if a given object implements the BlogpostWithoutInternalAllOfContentBlocks interface.
  */
-export declare function instanceOfBlogpostWithoutInternalAllOfContentBlocks(value: object): boolean;
+export declare function instanceOfBlogpostWithoutInternalAllOfContentBlocks(value: object): value is BlogpostWithoutInternalAllOfContentBlocks;
 export declare function BlogpostWithoutInternalAllOfContentBlocksFromJSON(json: any): BlogpostWithoutInternalAllOfContentBlocks;
 export declare function BlogpostWithoutInternalAllOfContentBlocksFromJSONTyped(json: any, ignoreDiscriminator: boolean): BlogpostWithoutInternalAllOfContentBlocks;
 export declare function BlogpostWithoutInternalAllOfContentBlocksToJSON(value?: BlogpostWithoutInternalAllOfContentBlocks | null): any;

@@ -31,7 +31,7 @@ export interface TagCreate400Response {
 /**
  * Check if a given object implements the TagCreate400Response interface.
  */
-export declare function instanceOfTagCreate400Response(value: object): boolean;
+export declare function instanceOfTagCreate400Response(value: object): value is TagCreate400Response;
 export declare function TagCreate400ResponseFromJSON(json: any): TagCreate400Response;
 export declare function TagCreate400ResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): TagCreate400Response;
 export declare function TagCreate400ResponseToJSON(value?: TagCreate400Response | null): any;

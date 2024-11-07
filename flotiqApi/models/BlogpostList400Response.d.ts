@@ -25,7 +25,7 @@ export interface BlogpostList400Response {
 /**
  * Check if a given object implements the BlogpostList400Response interface.
  */
-export declare function instanceOfBlogpostList400Response(value: object): boolean;
+export declare function instanceOfBlogpostList400Response(value: object): value is BlogpostList400Response;
 export declare function BlogpostList400ResponseFromJSON(json: any): BlogpostList400Response;
 export declare function BlogpostList400ResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): BlogpostList400Response;
 export declare function BlogpostList400ResponseToJSON(value?: BlogpostList400Response | null): any;

@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BatchResponseErrorErrorsInnerErrorsToJSON = exports.BatchResponseErrorErrorsInnerErrorsFromJSONTyped = exports.BatchResponseErrorErrorsInnerErrorsFromJSON = exports.instanceOfBatchResponseErrorErrorsInnerErrors = void 0;
+exports.instanceOfBatchResponseErrorErrorsInnerErrors = instanceOfBatchResponseErrorErrorsInnerErrors;
+exports.BatchResponseErrorErrorsInnerErrorsFromJSON = BatchResponseErrorErrorsInnerErrorsFromJSON;
+exports.BatchResponseErrorErrorsInnerErrorsFromJSONTyped = BatchResponseErrorErrorsInnerErrorsFromJSONTyped;
+exports.BatchResponseErrorErrorsInnerErrorsToJSON = BatchResponseErrorErrorsInnerErrorsToJSON;
 /**
  * Check if a given object implements the BatchResponseErrorErrorsInnerErrors interface.
  */
 function instanceOfBatchResponseErrorErrorsInnerErrors(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BatchResponseErrorErrorsInnerErrors' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBatchResponseErrorErrorsInnerErrors = instanceOfBatchResponseErrorErrorsInnerErrors;
 function BatchResponseErrorErrorsInnerErrorsFromJSON(json) {
     return BatchResponseErrorErrorsInnerErrorsFromJSONTyped(json, false);
 }
-exports.BatchResponseErrorErrorsInnerErrorsFromJSON = BatchResponseErrorErrorsInnerErrorsFromJSON;
 function BatchResponseErrorErrorsInnerErrorsFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -33,7 +43,6 @@ function BatchResponseErrorErrorsInnerErrorsFromJSONTyped(json, ignoreDiscrimina
         'name': json['name'] == null ? undefined : json['name'],
     };
 }
-exports.BatchResponseErrorErrorsInnerErrorsFromJSONTyped = BatchResponseErrorErrorsInnerErrorsFromJSONTyped;
 function BatchResponseErrorErrorsInnerErrorsToJSON(value) {
     if (value == null) {
         return value;
@@ -42,4 +51,3 @@ function BatchResponseErrorErrorsInnerErrorsToJSON(value) {
         'name': value['name'],
     };
 }
-exports.BatchResponseErrorErrorsInnerErrorsToJSON = BatchResponseErrorErrorsInnerErrorsToJSON;

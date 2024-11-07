@@ -13,27 +13,37 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MediaVersionsListToJSON = exports.MediaVersionsListFromJSONTyped = exports.MediaVersionsListFromJSON = exports.instanceOfMediaVersionsList = void 0;
-var VersionItem_1 = require("./VersionItem");
+exports.instanceOfMediaVersionsList = instanceOfMediaVersionsList;
+exports.MediaVersionsListFromJSON = MediaVersionsListFromJSON;
+exports.MediaVersionsListFromJSONTyped = MediaVersionsListFromJSONTyped;
+exports.MediaVersionsListToJSON = MediaVersionsListToJSON;
+const VersionItem_1 = require("./VersionItem");
 /**
  * Check if a given object implements the MediaVersionsList interface.
  */
 function instanceOfMediaVersionsList(value) {
-    if (!('total_count' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'MediaVersionsList' === typeSlug;
+    }
+    if (!('total_count' in value) || value['total_count'] === undefined)
         return false;
-    if (!('count' in value))
+    if (!('count' in value) || value['count'] === undefined)
         return false;
-    if (!('total_pages' in value))
+    if (!('total_pages' in value) || value['total_pages'] === undefined)
         return false;
-    if (!('current_page' in value))
+    if (!('current_page' in value) || value['current_page'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfMediaVersionsList = instanceOfMediaVersionsList;
 function MediaVersionsListFromJSON(json) {
     return MediaVersionsListFromJSONTyped(json, false);
 }
-exports.MediaVersionsListFromJSON = MediaVersionsListFromJSON;
 function MediaVersionsListFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -46,7 +56,6 @@ function MediaVersionsListFromJSONTyped(json, ignoreDiscriminator) {
         'data': json['data'] == null ? undefined : (json['data'].map(VersionItem_1.VersionItemFromJSON)),
     };
 }
-exports.MediaVersionsListFromJSONTyped = MediaVersionsListFromJSONTyped;
 function MediaVersionsListToJSON(value) {
     if (value == null) {
         return value;
@@ -59,4 +68,3 @@ function MediaVersionsListToJSON(value) {
         'data': value['data'] == null ? undefined : (value['data'].map(VersionItem_1.VersionItemToJSON)),
     };
 }
-exports.MediaVersionsListToJSON = MediaVersionsListToJSON;

@@ -13,21 +13,31 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AbstractContentTypeSchemaDefinitionToJSON = exports.AbstractContentTypeSchemaDefinitionFromJSONTyped = exports.AbstractContentTypeSchemaDefinitionFromJSON = exports.instanceOfAbstractContentTypeSchemaDefinition = void 0;
-var AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
+exports.instanceOfAbstractContentTypeSchemaDefinition = instanceOfAbstractContentTypeSchemaDefinition;
+exports.AbstractContentTypeSchemaDefinitionFromJSON = AbstractContentTypeSchemaDefinitionFromJSON;
+exports.AbstractContentTypeSchemaDefinitionFromJSONTyped = AbstractContentTypeSchemaDefinitionFromJSONTyped;
+exports.AbstractContentTypeSchemaDefinitionToJSON = AbstractContentTypeSchemaDefinitionToJSON;
+const AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
 /**
  * Check if a given object implements the AbstractContentTypeSchemaDefinition interface.
  */
 function instanceOfAbstractContentTypeSchemaDefinition(value) {
-    if (!('id' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'AbstractContentTypeSchemaDefinition' === typeSlug;
+    }
+    if (!('id' in value) || value['id'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfAbstractContentTypeSchemaDefinition = instanceOfAbstractContentTypeSchemaDefinition;
 function AbstractContentTypeSchemaDefinitionFromJSON(json) {
     return AbstractContentTypeSchemaDefinitionFromJSONTyped(json, false);
 }
-exports.AbstractContentTypeSchemaDefinitionFromJSON = AbstractContentTypeSchemaDefinitionFromJSON;
 function AbstractContentTypeSchemaDefinitionFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -37,7 +47,6 @@ function AbstractContentTypeSchemaDefinitionFromJSONTyped(json, ignoreDiscrimina
         'internal': json['internal'] == null ? undefined : (0, AbstractContentTypeSchemaDefinitionInternal_1.AbstractContentTypeSchemaDefinitionInternalFromJSON)(json['internal']),
     };
 }
-exports.AbstractContentTypeSchemaDefinitionFromJSONTyped = AbstractContentTypeSchemaDefinitionFromJSONTyped;
 function AbstractContentTypeSchemaDefinitionToJSON(value) {
     if (value == null) {
         return value;
@@ -47,4 +56,3 @@ function AbstractContentTypeSchemaDefinitionToJSON(value) {
         'internal': (0, AbstractContentTypeSchemaDefinitionInternal_1.AbstractContentTypeSchemaDefinitionInternalToJSON)(value['internal']),
     };
 }
-exports.AbstractContentTypeSchemaDefinitionToJSON = AbstractContentTypeSchemaDefinitionToJSON;

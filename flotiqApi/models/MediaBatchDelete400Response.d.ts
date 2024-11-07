@@ -25,7 +25,7 @@ export interface MediaBatchDelete400Response {
 /**
  * Check if a given object implements the MediaBatchDelete400Response interface.
  */
-export declare function instanceOfMediaBatchDelete400Response(value: object): boolean;
+export declare function instanceOfMediaBatchDelete400Response(value: object): value is MediaBatchDelete400Response;
 export declare function MediaBatchDelete400ResponseFromJSON(json: any): MediaBatchDelete400Response;
 export declare function MediaBatchDelete400ResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): MediaBatchDelete400Response;
 export declare function MediaBatchDelete400ResponseToJSON(value?: MediaBatchDelete400Response | null): any;

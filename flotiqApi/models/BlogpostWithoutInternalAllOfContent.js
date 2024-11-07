@@ -13,19 +13,29 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogpostWithoutInternalAllOfContentToJSON = exports.BlogpostWithoutInternalAllOfContentFromJSONTyped = exports.BlogpostWithoutInternalAllOfContentFromJSON = exports.instanceOfBlogpostWithoutInternalAllOfContent = void 0;
-var BlogpostWithoutInternalAllOfContentBlocks_1 = require("./BlogpostWithoutInternalAllOfContentBlocks");
+exports.instanceOfBlogpostWithoutInternalAllOfContent = instanceOfBlogpostWithoutInternalAllOfContent;
+exports.BlogpostWithoutInternalAllOfContentFromJSON = BlogpostWithoutInternalAllOfContentFromJSON;
+exports.BlogpostWithoutInternalAllOfContentFromJSONTyped = BlogpostWithoutInternalAllOfContentFromJSONTyped;
+exports.BlogpostWithoutInternalAllOfContentToJSON = BlogpostWithoutInternalAllOfContentToJSON;
+const BlogpostWithoutInternalAllOfContentBlocks_1 = require("./BlogpostWithoutInternalAllOfContentBlocks");
 /**
  * Check if a given object implements the BlogpostWithoutInternalAllOfContent interface.
  */
 function instanceOfBlogpostWithoutInternalAllOfContent(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BlogpostWithoutInternalAllOfContent' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBlogpostWithoutInternalAllOfContent = instanceOfBlogpostWithoutInternalAllOfContent;
 function BlogpostWithoutInternalAllOfContentFromJSON(json) {
     return BlogpostWithoutInternalAllOfContentFromJSONTyped(json, false);
 }
-exports.BlogpostWithoutInternalAllOfContentFromJSON = BlogpostWithoutInternalAllOfContentFromJSON;
 function BlogpostWithoutInternalAllOfContentFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -36,7 +46,6 @@ function BlogpostWithoutInternalAllOfContentFromJSONTyped(json, ignoreDiscrimina
         'version': json['version'] == null ? undefined : json['version'],
     };
 }
-exports.BlogpostWithoutInternalAllOfContentFromJSONTyped = BlogpostWithoutInternalAllOfContentFromJSONTyped;
 function BlogpostWithoutInternalAllOfContentToJSON(value) {
     if (value == null) {
         return value;
@@ -47,4 +56,3 @@ function BlogpostWithoutInternalAllOfContentToJSON(value) {
         'version': value['version'],
     };
 }
-exports.BlogpostWithoutInternalAllOfContentToJSON = BlogpostWithoutInternalAllOfContentToJSON;

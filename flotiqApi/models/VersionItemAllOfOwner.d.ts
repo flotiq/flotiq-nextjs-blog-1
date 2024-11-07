@@ -71,12 +71,6 @@ export interface VersionItemAllOfOwner {
     resetPasswordAt?: string;
     /**
      *
-     * @type {boolean}
-     * @memberof VersionItemAllOfOwner
-     */
-    subscribed?: boolean;
-    /**
-     *
      * @type {string}
      * @memberof VersionItemAllOfOwner
      */
@@ -97,7 +91,7 @@ export interface VersionItemAllOfOwner {
 /**
  * Check if a given object implements the VersionItemAllOfOwner interface.
  */
-export declare function instanceOfVersionItemAllOfOwner(value: object): boolean;
+export declare function instanceOfVersionItemAllOfOwner(value: object): value is VersionItemAllOfOwner;
 export declare function VersionItemAllOfOwnerFromJSON(json: any): VersionItemAllOfOwner;
 export declare function VersionItemAllOfOwnerFromJSONTyped(json: any, ignoreDiscriminator: boolean): VersionItemAllOfOwner;
 export declare function VersionItemAllOfOwnerToJSON(value?: VersionItemAllOfOwner | null): any;

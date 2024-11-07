@@ -13,19 +13,29 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BatchResponseErrorToJSON = exports.BatchResponseErrorFromJSONTyped = exports.BatchResponseErrorFromJSON = exports.instanceOfBatchResponseError = void 0;
-var BatchResponseErrorErrorsInner_1 = require("./BatchResponseErrorErrorsInner");
+exports.instanceOfBatchResponseError = instanceOfBatchResponseError;
+exports.BatchResponseErrorFromJSON = BatchResponseErrorFromJSON;
+exports.BatchResponseErrorFromJSONTyped = BatchResponseErrorFromJSONTyped;
+exports.BatchResponseErrorToJSON = BatchResponseErrorToJSON;
+const BatchResponseErrorErrorsInner_1 = require("./BatchResponseErrorErrorsInner");
 /**
  * Check if a given object implements the BatchResponseError interface.
  */
 function instanceOfBatchResponseError(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BatchResponseError' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBatchResponseError = instanceOfBatchResponseError;
 function BatchResponseErrorFromJSON(json) {
     return BatchResponseErrorFromJSONTyped(json, false);
 }
-exports.BatchResponseErrorFromJSON = BatchResponseErrorFromJSON;
 function BatchResponseErrorFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -37,7 +47,6 @@ function BatchResponseErrorFromJSONTyped(json, ignoreDiscriminator) {
         'errors': json['errors'] == null ? undefined : (json['errors'].map(BatchResponseErrorErrorsInner_1.BatchResponseErrorErrorsInnerFromJSON)),
     };
 }
-exports.BatchResponseErrorFromJSONTyped = BatchResponseErrorFromJSONTyped;
 function BatchResponseErrorToJSON(value) {
     if (value == null) {
         return value;
@@ -49,4 +58,3 @@ function BatchResponseErrorToJSON(value) {
         'errors': value['errors'] == null ? undefined : (value['errors'].map(BatchResponseErrorErrorsInner_1.BatchResponseErrorErrorsInnerToJSON)),
     };
 }
-exports.BatchResponseErrorToJSON = BatchResponseErrorToJSON;

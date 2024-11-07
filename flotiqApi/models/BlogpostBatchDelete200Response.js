@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogpostBatchDelete200ResponseToJSON = exports.BlogpostBatchDelete200ResponseFromJSONTyped = exports.BlogpostBatchDelete200ResponseFromJSON = exports.instanceOfBlogpostBatchDelete200Response = void 0;
+exports.instanceOfBlogpostBatchDelete200Response = instanceOfBlogpostBatchDelete200Response;
+exports.BlogpostBatchDelete200ResponseFromJSON = BlogpostBatchDelete200ResponseFromJSON;
+exports.BlogpostBatchDelete200ResponseFromJSONTyped = BlogpostBatchDelete200ResponseFromJSONTyped;
+exports.BlogpostBatchDelete200ResponseToJSON = BlogpostBatchDelete200ResponseToJSON;
 /**
  * Check if a given object implements the BlogpostBatchDelete200Response interface.
  */
 function instanceOfBlogpostBatchDelete200Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BlogpostBatchDelete200Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBlogpostBatchDelete200Response = instanceOfBlogpostBatchDelete200Response;
 function BlogpostBatchDelete200ResponseFromJSON(json) {
     return BlogpostBatchDelete200ResponseFromJSONTyped(json, false);
 }
-exports.BlogpostBatchDelete200ResponseFromJSON = BlogpostBatchDelete200ResponseFromJSON;
 function BlogpostBatchDelete200ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -33,7 +43,6 @@ function BlogpostBatchDelete200ResponseFromJSONTyped(json, ignoreDiscriminator) 
         'deletedCount': json['deletedCount'] == null ? undefined : json['deletedCount'],
     };
 }
-exports.BlogpostBatchDelete200ResponseFromJSONTyped = BlogpostBatchDelete200ResponseFromJSONTyped;
 function BlogpostBatchDelete200ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -42,4 +51,3 @@ function BlogpostBatchDelete200ResponseToJSON(value) {
         'deletedCount': value['deletedCount'],
     };
 }
-exports.BlogpostBatchDelete200ResponseToJSON = BlogpostBatchDelete200ResponseToJSON;

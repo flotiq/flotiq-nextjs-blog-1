@@ -38,7 +38,7 @@ export interface Tag {
 /**
  * Check if a given object implements the Tag interface.
  */
-export declare function instanceOfTag(value: object): boolean;
+export declare function instanceOfTag(value: object): value is Tag;
 export declare function TagFromJSON(json: any): Tag;
 export declare function TagFromJSONTyped(json: any, ignoreDiscriminator: boolean): Tag;
 export declare function TagToJSON(value?: Tag | null): any;

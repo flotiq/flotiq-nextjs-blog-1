@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TagCreate400ResponseToJSON = exports.TagCreate400ResponseFromJSONTyped = exports.TagCreate400ResponseFromJSON = exports.instanceOfTagCreate400Response = void 0;
+exports.instanceOfTagCreate400Response = instanceOfTagCreate400Response;
+exports.TagCreate400ResponseFromJSON = TagCreate400ResponseFromJSON;
+exports.TagCreate400ResponseFromJSONTyped = TagCreate400ResponseFromJSONTyped;
+exports.TagCreate400ResponseToJSON = TagCreate400ResponseToJSON;
 /**
  * Check if a given object implements the TagCreate400Response interface.
  */
 function instanceOfTagCreate400Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'TagCreate400Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfTagCreate400Response = instanceOfTagCreate400Response;
 function TagCreate400ResponseFromJSON(json) {
     return TagCreate400ResponseFromJSONTyped(json, false);
 }
-exports.TagCreate400ResponseFromJSON = TagCreate400ResponseFromJSON;
 function TagCreate400ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -34,7 +44,6 @@ function TagCreate400ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'id': json['id'] == null ? undefined : json['id'],
     };
 }
-exports.TagCreate400ResponseFromJSONTyped = TagCreate400ResponseFromJSONTyped;
 function TagCreate400ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -44,4 +53,3 @@ function TagCreate400ResponseToJSON(value) {
         'id': value['id'],
     };
 }
-exports.TagCreate400ResponseToJSON = TagCreate400ResponseToJSON;

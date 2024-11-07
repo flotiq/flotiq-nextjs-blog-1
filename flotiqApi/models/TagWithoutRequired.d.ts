@@ -38,7 +38,7 @@ export interface TagWithoutRequired {
 /**
  * Check if a given object implements the TagWithoutRequired interface.
  */
-export declare function instanceOfTagWithoutRequired(value: object): boolean;
+export declare function instanceOfTagWithoutRequired(value: object): value is TagWithoutRequired;
 export declare function TagWithoutRequiredFromJSON(json: any): TagWithoutRequired;
 export declare function TagWithoutRequiredFromJSONTyped(json: any, ignoreDiscriminator: boolean): TagWithoutRequired;
 export declare function TagWithoutRequiredToJSON(value?: TagWithoutRequired | null): any;

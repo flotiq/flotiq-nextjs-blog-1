@@ -13,26 +13,36 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AbstractContentTypeSchemaDefinitionInternalToJSON = exports.AbstractContentTypeSchemaDefinitionInternalFromJSONTyped = exports.AbstractContentTypeSchemaDefinitionInternalFromJSON = exports.instanceOfAbstractContentTypeSchemaDefinitionInternal = void 0;
+exports.instanceOfAbstractContentTypeSchemaDefinitionInternal = instanceOfAbstractContentTypeSchemaDefinitionInternal;
+exports.AbstractContentTypeSchemaDefinitionInternalFromJSON = AbstractContentTypeSchemaDefinitionInternalFromJSON;
+exports.AbstractContentTypeSchemaDefinitionInternalFromJSONTyped = AbstractContentTypeSchemaDefinitionInternalFromJSONTyped;
+exports.AbstractContentTypeSchemaDefinitionInternalToJSON = AbstractContentTypeSchemaDefinitionInternalToJSON;
 /**
  * Check if a given object implements the AbstractContentTypeSchemaDefinitionInternal interface.
  */
 function instanceOfAbstractContentTypeSchemaDefinitionInternal(value) {
-    if (!('contentType' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'AbstractContentTypeSchemaDefinitionInternal' === typeSlug;
+    }
+    if (!('contentType' in value) || value['contentType'] === undefined)
         return false;
-    if (!('createdAt' in value))
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
         return false;
-    if (!('updatedAt' in value))
+    if (!('updatedAt' in value) || value['updatedAt'] === undefined)
         return false;
-    if (!('deletedAt' in value))
+    if (!('deletedAt' in value) || value['deletedAt'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfAbstractContentTypeSchemaDefinitionInternal = instanceOfAbstractContentTypeSchemaDefinitionInternal;
 function AbstractContentTypeSchemaDefinitionInternalFromJSON(json) {
     return AbstractContentTypeSchemaDefinitionInternalFromJSONTyped(json, false);
 }
-exports.AbstractContentTypeSchemaDefinitionInternalFromJSON = AbstractContentTypeSchemaDefinitionInternalFromJSON;
 function AbstractContentTypeSchemaDefinitionInternalFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -49,7 +59,6 @@ function AbstractContentTypeSchemaDefinitionInternalFromJSONTyped(json, ignoreDi
         'workflowPublishedAt': json['workflowPublishedAt'] == null ? undefined : json['workflowPublishedAt'],
     };
 }
-exports.AbstractContentTypeSchemaDefinitionInternalFromJSONTyped = AbstractContentTypeSchemaDefinitionInternalFromJSONTyped;
 function AbstractContentTypeSchemaDefinitionInternalToJSON(value) {
     if (value == null) {
         return value;
@@ -66,4 +75,3 @@ function AbstractContentTypeSchemaDefinitionInternalToJSON(value) {
         'workflowPublishedAt': value['workflowPublishedAt'],
     };
 }
-exports.AbstractContentTypeSchemaDefinitionInternalToJSON = AbstractContentTypeSchemaDefinitionInternalToJSON;

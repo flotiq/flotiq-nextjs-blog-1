@@ -13,22 +13,32 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TagWithoutInternalToJSON = exports.TagWithoutInternalFromJSONTyped = exports.TagWithoutInternalFromJSON = exports.instanceOfTagWithoutInternal = void 0;
+exports.instanceOfTagWithoutInternal = instanceOfTagWithoutInternal;
+exports.TagWithoutInternalFromJSON = TagWithoutInternalFromJSON;
+exports.TagWithoutInternalFromJSONTyped = TagWithoutInternalFromJSONTyped;
+exports.TagWithoutInternalToJSON = TagWithoutInternalToJSON;
 /**
  * Check if a given object implements the TagWithoutInternal interface.
  */
 function instanceOfTagWithoutInternal(value) {
-    if (!('id' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'TagWithoutInternal' === typeSlug;
+    }
+    if (!('id' in value) || value['id'] === undefined)
         return false;
-    if (!('name' in value))
+    if (!('name' in value) || value['name'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfTagWithoutInternal = instanceOfTagWithoutInternal;
 function TagWithoutInternalFromJSON(json) {
     return TagWithoutInternalFromJSONTyped(json, false);
 }
-exports.TagWithoutInternalFromJSON = TagWithoutInternalFromJSON;
 function TagWithoutInternalFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -38,7 +48,6 @@ function TagWithoutInternalFromJSONTyped(json, ignoreDiscriminator) {
         'name': json['name'],
     };
 }
-exports.TagWithoutInternalFromJSONTyped = TagWithoutInternalFromJSONTyped;
 function TagWithoutInternalToJSON(value) {
     if (value == null) {
         return value;
@@ -48,4 +57,3 @@ function TagWithoutInternalToJSON(value) {
         'name': value['name'],
     };
 }
-exports.TagWithoutInternalToJSON = TagWithoutInternalToJSON;

@@ -39,7 +39,7 @@ export type DataSourceTypeEnum = typeof DataSourceTypeEnum[keyof typeof DataSour
 /**
  * Check if a given object implements the DataSource interface.
  */
-export declare function instanceOfDataSource(value: object): boolean;
+export declare function instanceOfDataSource(value: object): value is DataSource;
 export declare function DataSourceFromJSON(json: any): DataSource;
 export declare function DataSourceFromJSONTyped(json: any, ignoreDiscriminator: boolean): DataSource;
 export declare function DataSourceToJSON(value?: DataSource | null): any;

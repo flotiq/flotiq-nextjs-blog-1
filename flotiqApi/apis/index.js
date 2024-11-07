@@ -16,6 +16,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 /* eslint-disable */
-__exportStar(require("./BlogPostAPI"), exports);
-__exportStar(require("./MediaInternalAPI"), exports);
-__exportStar(require("./TagInternalAPI"), exports);
+__exportStar(require("./BlogpostAPI"), exports);
+__exportStar(require("./MediaAPI"), exports);
+__exportStar(require("./TagAPI"), exports);
