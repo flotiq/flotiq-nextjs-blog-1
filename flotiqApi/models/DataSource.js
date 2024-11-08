@@ -13,7 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DataSourceToJSON = exports.DataSourceFromJSONTyped = exports.DataSourceFromJSON = exports.instanceOfDataSource = exports.DataSourceTypeEnum = void 0;
+exports.DataSourceTypeEnum = void 0;
+exports.instanceOfDataSource = instanceOfDataSource;
+exports.DataSourceFromJSON = DataSourceFromJSON;
+exports.DataSourceFromJSONTyped = DataSourceFromJSONTyped;
+exports.DataSourceToJSON = DataSourceToJSON;
 /**
  * @export
  */
@@ -25,17 +29,24 @@ exports.DataSourceTypeEnum = {
  * Check if a given object implements the DataSource interface.
  */
 function instanceOfDataSource(value) {
-    if (!('dataUrl' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'DataSource' === typeSlug;
+    }
+    if (!('dataUrl' in value) || value['dataUrl'] === undefined)
         return false;
-    if (!('type' in value))
+    if (!('type' in value) || value['type'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfDataSource = instanceOfDataSource;
 function DataSourceFromJSON(json) {
     return DataSourceFromJSONTyped(json, false);
 }
-exports.DataSourceFromJSON = DataSourceFromJSON;
 function DataSourceFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -45,7 +56,6 @@ function DataSourceFromJSONTyped(json, ignoreDiscriminator) {
         'type': json['type'],
     };
 }
-exports.DataSourceFromJSONTyped = DataSourceFromJSONTyped;
 function DataSourceToJSON(value) {
     if (value == null) {
         return value;
@@ -55,4 +65,3 @@ function DataSourceToJSON(value) {
         'type': value['type'],
     };
 }
-exports.DataSourceToJSON = DataSourceToJSON;

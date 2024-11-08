@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogpostDelete400ResponseToJSON = exports.BlogpostDelete400ResponseFromJSONTyped = exports.BlogpostDelete400ResponseFromJSON = exports.instanceOfBlogpostDelete400Response = void 0;
+exports.instanceOfBlogpostDelete400Response = instanceOfBlogpostDelete400Response;
+exports.BlogpostDelete400ResponseFromJSON = BlogpostDelete400ResponseFromJSON;
+exports.BlogpostDelete400ResponseFromJSONTyped = BlogpostDelete400ResponseFromJSONTyped;
+exports.BlogpostDelete400ResponseToJSON = BlogpostDelete400ResponseToJSON;
 /**
  * Check if a given object implements the BlogpostDelete400Response interface.
  */
 function instanceOfBlogpostDelete400Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BlogpostDelete400Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBlogpostDelete400Response = instanceOfBlogpostDelete400Response;
 function BlogpostDelete400ResponseFromJSON(json) {
     return BlogpostDelete400ResponseFromJSONTyped(json, false);
 }
-exports.BlogpostDelete400ResponseFromJSON = BlogpostDelete400ResponseFromJSON;
 function BlogpostDelete400ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -33,7 +43,6 @@ function BlogpostDelete400ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'errors': json['errors'] == null ? undefined : json['errors'],
     };
 }
-exports.BlogpostDelete400ResponseFromJSONTyped = BlogpostDelete400ResponseFromJSONTyped;
 function BlogpostDelete400ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -42,4 +51,3 @@ function BlogpostDelete400ResponseToJSON(value) {
         'errors': value['errors'],
     };
 }
-exports.BlogpostDelete400ResponseToJSON = BlogpostDelete400ResponseToJSON;

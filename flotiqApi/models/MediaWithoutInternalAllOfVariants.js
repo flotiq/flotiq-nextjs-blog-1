@@ -13,21 +13,31 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MediaWithoutInternalAllOfVariantsToJSON = exports.MediaWithoutInternalAllOfVariantsFromJSONTyped = exports.MediaWithoutInternalAllOfVariantsFromJSON = exports.instanceOfMediaWithoutInternalAllOfVariants = void 0;
-var MediaWithoutInternalAllOfTrim_1 = require("./MediaWithoutInternalAllOfTrim");
+exports.instanceOfMediaWithoutInternalAllOfVariants = instanceOfMediaWithoutInternalAllOfVariants;
+exports.MediaWithoutInternalAllOfVariantsFromJSON = MediaWithoutInternalAllOfVariantsFromJSON;
+exports.MediaWithoutInternalAllOfVariantsFromJSONTyped = MediaWithoutInternalAllOfVariantsFromJSONTyped;
+exports.MediaWithoutInternalAllOfVariantsToJSON = MediaWithoutInternalAllOfVariantsToJSON;
+const MediaWithoutInternalAllOfTrim_1 = require("./MediaWithoutInternalAllOfTrim");
 /**
  * Check if a given object implements the MediaWithoutInternalAllOfVariants interface.
  */
 function instanceOfMediaWithoutInternalAllOfVariants(value) {
-    if (!('name' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'MediaWithoutInternalAllOfVariants' === typeSlug;
+    }
+    if (!('name' in value) || value['name'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfMediaWithoutInternalAllOfVariants = instanceOfMediaWithoutInternalAllOfVariants;
 function MediaWithoutInternalAllOfVariantsFromJSON(json) {
     return MediaWithoutInternalAllOfVariantsFromJSONTyped(json, false);
 }
-exports.MediaWithoutInternalAllOfVariantsFromJSON = MediaWithoutInternalAllOfVariantsFromJSON;
 function MediaWithoutInternalAllOfVariantsFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -37,7 +47,6 @@ function MediaWithoutInternalAllOfVariantsFromJSONTyped(json, ignoreDiscriminato
         'trim': json['trim'] == null ? undefined : (0, MediaWithoutInternalAllOfTrim_1.MediaWithoutInternalAllOfTrimFromJSON)(json['trim']),
     };
 }
-exports.MediaWithoutInternalAllOfVariantsFromJSONTyped = MediaWithoutInternalAllOfVariantsFromJSONTyped;
 function MediaWithoutInternalAllOfVariantsToJSON(value) {
     if (value == null) {
         return value;
@@ -47,4 +56,3 @@ function MediaWithoutInternalAllOfVariantsToJSON(value) {
         'trim': (0, MediaWithoutInternalAllOfTrim_1.MediaWithoutInternalAllOfTrimToJSON)(value['trim']),
     };
 }
-exports.MediaWithoutInternalAllOfVariantsToJSON = MediaWithoutInternalAllOfVariantsToJSON;

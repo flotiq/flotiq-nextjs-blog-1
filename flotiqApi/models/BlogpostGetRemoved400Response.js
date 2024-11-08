@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogpostGetRemoved400ResponseToJSON = exports.BlogpostGetRemoved400ResponseFromJSONTyped = exports.BlogpostGetRemoved400ResponseFromJSON = exports.instanceOfBlogpostGetRemoved400Response = void 0;
+exports.instanceOfBlogpostGetRemoved400Response = instanceOfBlogpostGetRemoved400Response;
+exports.BlogpostGetRemoved400ResponseFromJSON = BlogpostGetRemoved400ResponseFromJSON;
+exports.BlogpostGetRemoved400ResponseFromJSONTyped = BlogpostGetRemoved400ResponseFromJSONTyped;
+exports.BlogpostGetRemoved400ResponseToJSON = BlogpostGetRemoved400ResponseToJSON;
 /**
  * Check if a given object implements the BlogpostGetRemoved400Response interface.
  */
 function instanceOfBlogpostGetRemoved400Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BlogpostGetRemoved400Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBlogpostGetRemoved400Response = instanceOfBlogpostGetRemoved400Response;
 function BlogpostGetRemoved400ResponseFromJSON(json) {
     return BlogpostGetRemoved400ResponseFromJSONTyped(json, false);
 }
-exports.BlogpostGetRemoved400ResponseFromJSON = BlogpostGetRemoved400ResponseFromJSON;
 function BlogpostGetRemoved400ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -33,7 +43,6 @@ function BlogpostGetRemoved400ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'deletedAfter': json['deletedAfter'] == null ? undefined : json['deletedAfter'],
     };
 }
-exports.BlogpostGetRemoved400ResponseFromJSONTyped = BlogpostGetRemoved400ResponseFromJSONTyped;
 function BlogpostGetRemoved400ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -42,4 +51,3 @@ function BlogpostGetRemoved400ResponseToJSON(value) {
         'deletedAfter': value['deletedAfter'],
     };
 }
-exports.BlogpostGetRemoved400ResponseToJSON = BlogpostGetRemoved400ResponseToJSON;

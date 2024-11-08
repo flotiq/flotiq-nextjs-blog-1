@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VersionItemAllOfOwnerToJSON = exports.VersionItemAllOfOwnerFromJSONTyped = exports.VersionItemAllOfOwnerFromJSON = exports.instanceOfVersionItemAllOfOwner = void 0;
+exports.instanceOfVersionItemAllOfOwner = instanceOfVersionItemAllOfOwner;
+exports.VersionItemAllOfOwnerFromJSON = VersionItemAllOfOwnerFromJSON;
+exports.VersionItemAllOfOwnerFromJSONTyped = VersionItemAllOfOwnerFromJSONTyped;
+exports.VersionItemAllOfOwnerToJSON = VersionItemAllOfOwnerToJSON;
 /**
  * Check if a given object implements the VersionItemAllOfOwner interface.
  */
 function instanceOfVersionItemAllOfOwner(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'VersionItemAllOfOwner' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfVersionItemAllOfOwner = instanceOfVersionItemAllOfOwner;
 function VersionItemAllOfOwnerFromJSON(json) {
     return VersionItemAllOfOwnerFromJSONTyped(json, false);
 }
-exports.VersionItemAllOfOwnerFromJSON = VersionItemAllOfOwnerFromJSON;
 function VersionItemAllOfOwnerFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -39,13 +49,11 @@ function VersionItemAllOfOwnerFromJSONTyped(json, ignoreDiscriminator) {
         'language': json['language'] == null ? undefined : json['language'],
         'enabled': json['enabled'] == null ? undefined : json['enabled'],
         'resetPasswordAt': json['resetPasswordAt'] == null ? undefined : json['resetPasswordAt'],
-        'subscribed': json['subscribed'] == null ? undefined : json['subscribed'],
         'deletedAt': json['deletedAt'] == null ? undefined : json['deletedAt'],
         'createdAt': json['createdAt'] == null ? undefined : json['createdAt'],
         'updatedAt': json['updatedAt'] == null ? undefined : json['updatedAt'],
     };
 }
-exports.VersionItemAllOfOwnerFromJSONTyped = VersionItemAllOfOwnerFromJSONTyped;
 function VersionItemAllOfOwnerToJSON(value) {
     if (value == null) {
         return value;
@@ -60,10 +68,8 @@ function VersionItemAllOfOwnerToJSON(value) {
         'language': value['language'],
         'enabled': value['enabled'],
         'resetPasswordAt': value['resetPasswordAt'],
-        'subscribed': value['subscribed'],
         'deletedAt': value['deletedAt'],
         'createdAt': value['createdAt'],
         'updatedAt': value['updatedAt'],
     };
 }
-exports.VersionItemAllOfOwnerToJSON = VersionItemAllOfOwnerToJSON;

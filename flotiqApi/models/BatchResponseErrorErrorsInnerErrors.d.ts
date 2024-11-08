@@ -25,7 +25,7 @@ export interface BatchResponseErrorErrorsInnerErrors {
 /**
  * Check if a given object implements the BatchResponseErrorErrorsInnerErrors interface.
  */
-export declare function instanceOfBatchResponseErrorErrorsInnerErrors(value: object): boolean;
+export declare function instanceOfBatchResponseErrorErrorsInnerErrors(value: object): value is BatchResponseErrorErrorsInnerErrors;
 export declare function BatchResponseErrorErrorsInnerErrorsFromJSON(json: any): BatchResponseErrorErrorsInnerErrors;
 export declare function BatchResponseErrorErrorsInnerErrorsFromJSONTyped(json: any, ignoreDiscriminator: boolean): BatchResponseErrorErrorsInnerErrors;
 export declare function BatchResponseErrorErrorsInnerErrorsToJSON(value?: BatchResponseErrorErrorsInnerErrors | null): any;

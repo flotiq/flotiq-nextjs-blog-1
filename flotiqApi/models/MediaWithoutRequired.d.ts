@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 import type { AbstractContentTypeSchemaDefinitionInternal } from './AbstractContentTypeSchemaDefinitionInternal';
-import type { DataSource } from './DataSource';
 import type { MediaWithoutInternalAllOfVariants } from './MediaWithoutInternalAllOfVariants';
+import type { DataSource } from './DataSource';
 /**
  *
  * @export
@@ -35,6 +35,12 @@ export interface MediaWithoutRequired {
      * @type {string}
      * @memberof MediaWithoutRequired
      */
+    alt?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof MediaWithoutRequired
+     */
     url?: string;
     /**
      *
@@ -47,7 +53,7 @@ export interface MediaWithoutRequired {
      * @type {Array<DataSource>}
      * @memberof MediaWithoutRequired
      */
-    tags?: Array<DataSource> | Array<DataSource>;
+    tags?: Array<DataSource>;
     /**
      *
      * @type {string}
@@ -89,7 +95,7 @@ export interface MediaWithoutRequired {
      * @type {Array<MediaWithoutInternalAllOfVariants>}
      * @memberof MediaWithoutRequired
      */
-    variants?: Array<MediaWithoutInternalAllOfVariants> | Array<DataSource>;
+    variants?: Array<MediaWithoutInternalAllOfVariants>;
     /**
      *
      * @type {string}
@@ -106,7 +112,7 @@ export interface MediaWithoutRequired {
 /**
  * Check if a given object implements the MediaWithoutRequired interface.
  */
-export declare function instanceOfMediaWithoutRequired(value: object): boolean;
+export declare function instanceOfMediaWithoutRequired(value: object): value is MediaWithoutRequired;
 export declare function MediaWithoutRequiredFromJSON(json: any): MediaWithoutRequired;
 export declare function MediaWithoutRequiredFromJSONTyped(json: any, ignoreDiscriminator: boolean): MediaWithoutRequired;
 export declare function MediaWithoutRequiredToJSON(value?: MediaWithoutRequired | null): any;

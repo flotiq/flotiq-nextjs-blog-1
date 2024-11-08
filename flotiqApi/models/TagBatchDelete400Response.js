@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TagBatchDelete400ResponseToJSON = exports.TagBatchDelete400ResponseFromJSONTyped = exports.TagBatchDelete400ResponseFromJSON = exports.instanceOfTagBatchDelete400Response = void 0;
+exports.instanceOfTagBatchDelete400Response = instanceOfTagBatchDelete400Response;
+exports.TagBatchDelete400ResponseFromJSON = TagBatchDelete400ResponseFromJSON;
+exports.TagBatchDelete400ResponseFromJSONTyped = TagBatchDelete400ResponseFromJSONTyped;
+exports.TagBatchDelete400ResponseToJSON = TagBatchDelete400ResponseToJSON;
 /**
  * Check if a given object implements the TagBatchDelete400Response interface.
  */
 function instanceOfTagBatchDelete400Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'TagBatchDelete400Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfTagBatchDelete400Response = instanceOfTagBatchDelete400Response;
 function TagBatchDelete400ResponseFromJSON(json) {
     return TagBatchDelete400ResponseFromJSONTyped(json, false);
 }
-exports.TagBatchDelete400ResponseFromJSON = TagBatchDelete400ResponseFromJSON;
 function TagBatchDelete400ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -33,7 +43,6 @@ function TagBatchDelete400ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'errors': json['errors'] == null ? undefined : json['errors'],
     };
 }
-exports.TagBatchDelete400ResponseFromJSONTyped = TagBatchDelete400ResponseFromJSONTyped;
 function TagBatchDelete400ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -42,4 +51,3 @@ function TagBatchDelete400ResponseToJSON(value) {
         'errors': value['errors'],
     };
 }
-exports.TagBatchDelete400ResponseToJSON = TagBatchDelete400ResponseToJSON;

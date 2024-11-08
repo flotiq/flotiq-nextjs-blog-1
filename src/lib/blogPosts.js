@@ -7,7 +7,7 @@ const DEFAULT_LIMIT = 6;
 const api = new FlotiqApi(apiKey);
 
 const getPost = async (filters, orderDirection) => {
-    const postReponse = await api.BlogPostAPI.list({
+    const postReponse = await api.BlogpostAPI.list({
         page: 1,
         limit: 1,
         order_by: DEFAULT_ORDER,
@@ -18,7 +18,7 @@ const getPost = async (filters, orderDirection) => {
 };
 
 export async function getBlogPosts(page = 1, limit = DEFAULT_LIMIT) {
-    return api.BlogPostAPI.list({
+    return api.BlogpostAPI.list({
         page,
         limit,
         order_by: DEFAULT_ORDER,

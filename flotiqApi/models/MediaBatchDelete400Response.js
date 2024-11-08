@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MediaBatchDelete400ResponseToJSON = exports.MediaBatchDelete400ResponseFromJSONTyped = exports.MediaBatchDelete400ResponseFromJSON = exports.instanceOfMediaBatchDelete400Response = void 0;
+exports.instanceOfMediaBatchDelete400Response = instanceOfMediaBatchDelete400Response;
+exports.MediaBatchDelete400ResponseFromJSON = MediaBatchDelete400ResponseFromJSON;
+exports.MediaBatchDelete400ResponseFromJSONTyped = MediaBatchDelete400ResponseFromJSONTyped;
+exports.MediaBatchDelete400ResponseToJSON = MediaBatchDelete400ResponseToJSON;
 /**
  * Check if a given object implements the MediaBatchDelete400Response interface.
  */
 function instanceOfMediaBatchDelete400Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'MediaBatchDelete400Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfMediaBatchDelete400Response = instanceOfMediaBatchDelete400Response;
 function MediaBatchDelete400ResponseFromJSON(json) {
     return MediaBatchDelete400ResponseFromJSONTyped(json, false);
 }
-exports.MediaBatchDelete400ResponseFromJSON = MediaBatchDelete400ResponseFromJSON;
 function MediaBatchDelete400ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -33,7 +43,6 @@ function MediaBatchDelete400ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'errors': json['errors'] == null ? undefined : json['errors'],
     };
 }
-exports.MediaBatchDelete400ResponseFromJSONTyped = MediaBatchDelete400ResponseFromJSONTyped;
 function MediaBatchDelete400ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -42,4 +51,3 @@ function MediaBatchDelete400ResponseToJSON(value) {
         'errors': value['errors'],
     };
 }
-exports.MediaBatchDelete400ResponseToJSON = MediaBatchDelete400ResponseToJSON;

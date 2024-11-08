@@ -43,7 +43,7 @@ export interface SystemListProperties {
 /**
  * Check if a given object implements the SystemListProperties interface.
  */
-export declare function instanceOfSystemListProperties(value: object): boolean;
+export declare function instanceOfSystemListProperties(value: object): value is SystemListProperties;
 export declare function SystemListPropertiesFromJSON(json: any): SystemListProperties;
 export declare function SystemListPropertiesFromJSONTyped(json: any, ignoreDiscriminator: boolean): SystemListProperties;
 export declare function SystemListPropertiesToJSON(value?: SystemListProperties | null): any;

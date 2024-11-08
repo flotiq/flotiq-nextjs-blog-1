@@ -38,7 +38,7 @@ export interface BlogpostWithoutInternalAllOfContent {
 /**
  * Check if a given object implements the BlogpostWithoutInternalAllOfContent interface.
  */
-export declare function instanceOfBlogpostWithoutInternalAllOfContent(value: object): boolean;
+export declare function instanceOfBlogpostWithoutInternalAllOfContent(value: object): value is BlogpostWithoutInternalAllOfContent;
 export declare function BlogpostWithoutInternalAllOfContentFromJSON(json: any): BlogpostWithoutInternalAllOfContent;
 export declare function BlogpostWithoutInternalAllOfContentFromJSONTyped(json: any, ignoreDiscriminator: boolean): BlogpostWithoutInternalAllOfContent;
 export declare function BlogpostWithoutInternalAllOfContentToJSON(value?: BlogpostWithoutInternalAllOfContent | null): any;

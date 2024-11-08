@@ -13,27 +13,37 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TagVersionsListToJSON = exports.TagVersionsListFromJSONTyped = exports.TagVersionsListFromJSON = exports.instanceOfTagVersionsList = void 0;
-var VersionItem_1 = require("./VersionItem");
+exports.instanceOfTagVersionsList = instanceOfTagVersionsList;
+exports.TagVersionsListFromJSON = TagVersionsListFromJSON;
+exports.TagVersionsListFromJSONTyped = TagVersionsListFromJSONTyped;
+exports.TagVersionsListToJSON = TagVersionsListToJSON;
+const VersionItem_1 = require("./VersionItem");
 /**
  * Check if a given object implements the TagVersionsList interface.
  */
 function instanceOfTagVersionsList(value) {
-    if (!('total_count' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'TagVersionsList' === typeSlug;
+    }
+    if (!('total_count' in value) || value['total_count'] === undefined)
         return false;
-    if (!('count' in value))
+    if (!('count' in value) || value['count'] === undefined)
         return false;
-    if (!('total_pages' in value))
+    if (!('total_pages' in value) || value['total_pages'] === undefined)
         return false;
-    if (!('current_page' in value))
+    if (!('current_page' in value) || value['current_page'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfTagVersionsList = instanceOfTagVersionsList;
 function TagVersionsListFromJSON(json) {
     return TagVersionsListFromJSONTyped(json, false);
 }
-exports.TagVersionsListFromJSON = TagVersionsListFromJSON;
 function TagVersionsListFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -46,7 +56,6 @@ function TagVersionsListFromJSONTyped(json, ignoreDiscriminator) {
         'data': json['data'] == null ? undefined : (json['data'].map(VersionItem_1.VersionItemFromJSON)),
     };
 }
-exports.TagVersionsListFromJSONTyped = TagVersionsListFromJSONTyped;
 function TagVersionsListToJSON(value) {
     if (value == null) {
         return value;
@@ -59,4 +68,3 @@ function TagVersionsListToJSON(value) {
         'data': value['data'] == null ? undefined : (value['data'].map(VersionItem_1.VersionItemToJSON)),
     };
 }
-exports.TagVersionsListToJSON = TagVersionsListToJSON;

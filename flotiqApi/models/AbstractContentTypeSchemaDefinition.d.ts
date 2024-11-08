@@ -32,7 +32,7 @@ export interface AbstractContentTypeSchemaDefinition {
 /**
  * Check if a given object implements the AbstractContentTypeSchemaDefinition interface.
  */
-export declare function instanceOfAbstractContentTypeSchemaDefinition(value: object): boolean;
+export declare function instanceOfAbstractContentTypeSchemaDefinition(value: object): value is AbstractContentTypeSchemaDefinition;
 export declare function AbstractContentTypeSchemaDefinitionFromJSON(json: any): AbstractContentTypeSchemaDefinition;
 export declare function AbstractContentTypeSchemaDefinitionFromJSONTyped(json: any, ignoreDiscriminator: boolean): AbstractContentTypeSchemaDefinition;
 export declare function AbstractContentTypeSchemaDefinitionToJSON(value?: AbstractContentTypeSchemaDefinition | null): any;

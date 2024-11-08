@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogpostCreate400ResponseToJSON = exports.BlogpostCreate400ResponseFromJSONTyped = exports.BlogpostCreate400ResponseFromJSON = exports.instanceOfBlogpostCreate400Response = void 0;
+exports.instanceOfBlogpostCreate400Response = instanceOfBlogpostCreate400Response;
+exports.BlogpostCreate400ResponseFromJSON = BlogpostCreate400ResponseFromJSON;
+exports.BlogpostCreate400ResponseFromJSONTyped = BlogpostCreate400ResponseFromJSONTyped;
+exports.BlogpostCreate400ResponseToJSON = BlogpostCreate400ResponseToJSON;
 /**
  * Check if a given object implements the BlogpostCreate400Response interface.
  */
 function instanceOfBlogpostCreate400Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BlogpostCreate400Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBlogpostCreate400Response = instanceOfBlogpostCreate400Response;
 function BlogpostCreate400ResponseFromJSON(json) {
     return BlogpostCreate400ResponseFromJSONTyped(json, false);
 }
-exports.BlogpostCreate400ResponseFromJSON = BlogpostCreate400ResponseFromJSON;
 function BlogpostCreate400ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -37,7 +47,6 @@ function BlogpostCreate400ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'id': json['id'] == null ? undefined : json['id'],
     };
 }
-exports.BlogpostCreate400ResponseFromJSONTyped = BlogpostCreate400ResponseFromJSONTyped;
 function BlogpostCreate400ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -50,4 +59,3 @@ function BlogpostCreate400ResponseToJSON(value) {
         'id': value['id'],
     };
 }
-exports.BlogpostCreate400ResponseToJSON = BlogpostCreate400ResponseToJSON;

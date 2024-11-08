@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogpostBatchDelete400ResponseToJSON = exports.BlogpostBatchDelete400ResponseFromJSONTyped = exports.BlogpostBatchDelete400ResponseFromJSON = exports.instanceOfBlogpostBatchDelete400Response = void 0;
+exports.instanceOfBlogpostBatchDelete400Response = instanceOfBlogpostBatchDelete400Response;
+exports.BlogpostBatchDelete400ResponseFromJSON = BlogpostBatchDelete400ResponseFromJSON;
+exports.BlogpostBatchDelete400ResponseFromJSONTyped = BlogpostBatchDelete400ResponseFromJSONTyped;
+exports.BlogpostBatchDelete400ResponseToJSON = BlogpostBatchDelete400ResponseToJSON;
 /**
  * Check if a given object implements the BlogpostBatchDelete400Response interface.
  */
 function instanceOfBlogpostBatchDelete400Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BlogpostBatchDelete400Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBlogpostBatchDelete400Response = instanceOfBlogpostBatchDelete400Response;
 function BlogpostBatchDelete400ResponseFromJSON(json) {
     return BlogpostBatchDelete400ResponseFromJSONTyped(json, false);
 }
-exports.BlogpostBatchDelete400ResponseFromJSON = BlogpostBatchDelete400ResponseFromJSON;
 function BlogpostBatchDelete400ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -33,7 +43,6 @@ function BlogpostBatchDelete400ResponseFromJSONTyped(json, ignoreDiscriminator) 
         'errors': json['errors'] == null ? undefined : json['errors'],
     };
 }
-exports.BlogpostBatchDelete400ResponseFromJSONTyped = BlogpostBatchDelete400ResponseFromJSONTyped;
 function BlogpostBatchDelete400ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -42,4 +51,3 @@ function BlogpostBatchDelete400ResponseToJSON(value) {
         'errors': value['errors'],
     };
 }
-exports.BlogpostBatchDelete400ResponseToJSON = BlogpostBatchDelete400ResponseToJSON;

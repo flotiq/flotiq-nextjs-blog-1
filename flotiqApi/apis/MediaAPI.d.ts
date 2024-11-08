@@ -10,35 +10,35 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { BatchResponseSuccess, BlogpostBatchDelete200Response, Media, MediaList, MediaVersionsList, MediaWithoutInternal, MediaWithoutRequired } from '../models/index';
-export interface MediaInternalAPIDeleteRequest {
+import type { BatchResponseSuccess, BlogpostBatchDelete200Response, Media, MediaList, MediaVersionsList, MediaWithoutInternal, MediaWithoutRequired } from '../models';
+export interface MediaAPIDeleteRequest {
     id: string;
 }
-export interface MediaInternalAPIBatchCreateRequest {
+export interface MediaAPIBatchCreateRequest {
     updateExisting?: boolean;
     MediaWithoutInternal?: Array<MediaWithoutInternal>;
 }
-export interface MediaInternalAPIBatchDeleteRequest {
+export interface MediaAPIBatchDeleteRequest {
     request_body?: Array<string>;
 }
-export interface MediaInternalAPIBatchPatchRequest {
+export interface MediaAPIBatchPatchRequest {
     MediaWithoutInternal?: Array<MediaWithoutInternal>;
 }
-export interface MediaInternalAPICreateRequest {
+export interface MediaAPICreateRequest {
     MediaWithoutInternal?: MediaWithoutInternal;
 }
-export interface MediaInternalAPIGetRequest {
+export interface MediaAPIGetRequest {
     id: string;
     hydrate?: number;
 }
-export interface MediaInternalAPIGetRemovedRequest {
+export interface MediaAPIGetRemovedRequest {
     deletedAfter?: string;
 }
-export interface MediaInternalAPIGetVersionsRequest {
+export interface MediaAPIGetVersionsRequest {
     id: string;
     versionId: string;
 }
-export interface MediaInternalAPIListRequest {
+export interface MediaAPIListRequest {
     page?: number;
     limit?: number;
     order_by?: string;
@@ -47,143 +47,143 @@ export interface MediaInternalAPIListRequest {
     filters?: string;
     ids?: Array<string>;
 }
-export interface MediaInternalAPIListVersionRequest {
+export interface MediaAPIListVersionRequest {
     id: string;
     page?: number;
     limit?: number;
     order_by?: string;
     order_direction?: string;
 }
-export interface MediaInternalAPIPatchRequest {
+export interface MediaAPIPatchRequest {
     id: string;
     MediaWithoutRequired?: MediaWithoutRequired;
 }
-export interface MediaInternalAPIUpdateRequest {
+export interface MediaAPIUpdateRequest {
     id: string;
     MediaWithoutInternal?: MediaWithoutInternal;
 }
 /**
  *
  */
-export declare class MediaInternalAPI extends runtime.BaseAPI {
+export declare class MediaAPI extends runtime.BaseAPI {
     /**
      * Removes Media (internal) object.<br />
      * Delete a _media object
      */
-    _deleteRaw(requestParameters: MediaInternalAPIDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    _deleteRaw(requestParameters: MediaAPIDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Removes Media (internal) object.<br />
      * Delete a _media object
      */
-    _delete(requestParameters: MediaInternalAPIDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    _delete(requestParameters: MediaAPIDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Allows you to create or create and update up to 100 objects of Media (internal) type. <br />
      * Create a batch of _media objects
      */
-    batchCreateRaw(requestParameters: MediaInternalAPIBatchCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BatchResponseSuccess>>;
+    batchCreateRaw(requestParameters: MediaAPIBatchCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BatchResponseSuccess>>;
     /**
      * Allows you to create or create and update up to 100 objects of Media (internal) type. <br />
      * Create a batch of _media objects
      */
-    batchCreate(requestParameters?: MediaInternalAPIBatchCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BatchResponseSuccess>;
+    batchCreate(requestParameters?: MediaAPIBatchCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BatchResponseSuccess>;
     /**
      * Allows you to delete up to 100 objects of Media (internal) type. <br />Request body accepts an array of content object IDs that are to be deleted.<br />
      * Delete a batch of _media objects
      */
-    batchDeleteRaw(requestParameters: MediaInternalAPIBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BlogpostBatchDelete200Response>>;
+    batchDeleteRaw(requestParameters: MediaAPIBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BlogpostBatchDelete200Response>>;
     /**
      * Allows you to delete up to 100 objects of Media (internal) type. <br />Request body accepts an array of content object IDs that are to be deleted.<br />
      * Delete a batch of _media objects
      */
-    batchDelete(requestParameters?: MediaInternalAPIBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BlogpostBatchDelete200Response>;
+    batchDelete(requestParameters?: MediaAPIBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BlogpostBatchDelete200Response>;
     /**
      * Allows you to update up to 100 objects of Media (internal) type. <br />
      * Update selected fields of a batch of objects
      */
-    batchPatchRaw(requestParameters: MediaInternalAPIBatchPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BatchResponseSuccess>>;
+    batchPatchRaw(requestParameters: MediaAPIBatchPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BatchResponseSuccess>>;
     /**
      * Allows you to update up to 100 objects of Media (internal) type. <br />
      * Update selected fields of a batch of objects
      */
-    batchPatch(requestParameters?: MediaInternalAPIBatchPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BatchResponseSuccess>;
+    batchPatch(requestParameters?: MediaAPIBatchPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BatchResponseSuccess>;
     /**
      * Allows you to create object of Media (internal) type. <br />
      * Create a _media object
      */
-    createRaw(requestParameters: MediaInternalAPICreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
+    createRaw(requestParameters: MediaAPICreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
     /**
      * Allows you to create object of Media (internal) type. <br />
      * Create a _media object
      */
-    create(requestParameters?: MediaInternalAPICreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
+    create(requestParameters?: MediaAPICreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
     /**
      * Returns all information about Media (internal) object. <br />
      * Get _media object by Id
      */
-    getRaw(requestParameters: MediaInternalAPIGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
+    getRaw(requestParameters: MediaAPIGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
     /**
      * Returns all information about Media (internal) object. <br />
      * Get _media object by Id
      */
-    get(requestParameters: MediaInternalAPIGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
+    get(requestParameters: MediaAPIGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
     /**
      * Get ids of removed Media (internal) objects. <br />
      * Get removed object identifiers
      */
-    getRemovedRaw(requestParameters: MediaInternalAPIGetRemovedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>>;
+    getRemovedRaw(requestParameters: MediaAPIGetRemovedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>>;
     /**
      * Get ids of removed Media (internal) objects. <br />
      * Get removed object identifiers
      */
-    getRemoved(requestParameters?: MediaInternalAPIGetRemovedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>>;
+    getRemoved(requestParameters?: MediaAPIGetRemovedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>>;
     /**
      * Return version of Media (internal) object. <br />
      * Get a specific version of _media object
      */
-    getVersionsRaw(requestParameters: MediaInternalAPIGetVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
+    getVersionsRaw(requestParameters: MediaAPIGetVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
     /**
      * Return version of Media (internal) object. <br />
      * Get a specific version of _media object
      */
-    getVersions(requestParameters: MediaInternalAPIGetVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
+    getVersions(requestParameters: MediaAPIGetVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
     /**
      * List objects of Media (internal) type. <br />
      * List _media objects
      */
-    listRaw(requestParameters: MediaInternalAPIListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MediaList>>;
+    listRaw(requestParameters: MediaAPIListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MediaList>>;
     /**
      * List objects of Media (internal) type. <br />
      * List _media objects
      */
-    list(requestParameters?: MediaInternalAPIListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MediaList>;
+    list(requestParameters?: MediaAPIListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MediaList>;
     /**
      * List objects versions of Media (internal) type. <br />
      * List all versions of a _media object
      */
-    listVersionRaw(requestParameters: MediaInternalAPIListVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MediaVersionsList>>;
+    listVersionRaw(requestParameters: MediaAPIListVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MediaVersionsList>>;
     /**
      * List objects versions of Media (internal) type. <br />
      * List all versions of a _media object
      */
-    listVersion(requestParameters: MediaInternalAPIListVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MediaVersionsList>;
+    listVersion(requestParameters: MediaAPIListVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MediaVersionsList>;
     /**
      * Allows update of the Media (internal) object, but it is unnecessary to specify all the object\'s properties. Properties not included in the payload will be completed with data from the database. <br />
      * Update selected fields of _media object
      */
-    patchRaw(requestParameters: MediaInternalAPIPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
+    patchRaw(requestParameters: MediaAPIPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
     /**
      * Allows update of the Media (internal) object, but it is unnecessary to specify all the object\'s properties. Properties not included in the payload will be completed with data from the database. <br />
      * Update selected fields of _media object
      */
-    patch(requestParameters: MediaInternalAPIPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
+    patch(requestParameters: MediaAPIPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
     /**
      * Allows update of the Media (internal) object, it has to have all fields, as this operation overwrites the object. All properties not included in the payload will be lost. <br />
      * Update existing _media object
      */
-    updateRaw(requestParameters: MediaInternalAPIUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
+    updateRaw(requestParameters: MediaAPIUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Media>>;
     /**
      * Allows update of the Media (internal) object, it has to have all fields, as this operation overwrites the object. All properties not included in the payload will be lost. <br />
      * Update existing _media object
      */
-    update(requestParameters: MediaInternalAPIUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
+    update(requestParameters: MediaAPIUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Media>;
 }

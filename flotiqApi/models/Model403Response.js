@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Model403ResponseToJSON = exports.Model403ResponseFromJSONTyped = exports.Model403ResponseFromJSON = exports.instanceOfModel403Response = void 0;
+exports.instanceOfModel403Response = instanceOfModel403Response;
+exports.Model403ResponseFromJSON = Model403ResponseFromJSON;
+exports.Model403ResponseFromJSONTyped = Model403ResponseFromJSONTyped;
+exports.Model403ResponseToJSON = Model403ResponseToJSON;
 /**
  * Check if a given object implements the Model403Response interface.
  */
 function instanceOfModel403Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'Model403Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfModel403Response = instanceOfModel403Response;
 function Model403ResponseFromJSON(json) {
     return Model403ResponseFromJSONTyped(json, false);
 }
-exports.Model403ResponseFromJSON = Model403ResponseFromJSON;
 function Model403ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -34,7 +44,6 @@ function Model403ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'data': json['data'] == null ? undefined : json['data'],
     };
 }
-exports.Model403ResponseFromJSONTyped = Model403ResponseFromJSONTyped;
 function Model403ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -44,4 +53,3 @@ function Model403ResponseToJSON(value) {
         'data': value['data'],
     };
 }
-exports.Model403ResponseToJSON = Model403ResponseToJSON;

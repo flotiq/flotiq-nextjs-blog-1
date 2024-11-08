@@ -50,7 +50,7 @@ export interface MediaList {
 /**
  * Check if a given object implements the MediaList interface.
  */
-export declare function instanceOfMediaList(value: object): boolean;
+export declare function instanceOfMediaList(value: object): value is MediaList;
 export declare function MediaListFromJSON(json: any): MediaList;
 export declare function MediaListFromJSONTyped(json: any, ignoreDiscriminator: boolean): MediaList;
 export declare function MediaListToJSON(value?: MediaList | null): any;

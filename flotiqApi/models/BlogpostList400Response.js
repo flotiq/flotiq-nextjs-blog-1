@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogpostList400ResponseToJSON = exports.BlogpostList400ResponseFromJSONTyped = exports.BlogpostList400ResponseFromJSON = exports.instanceOfBlogpostList400Response = void 0;
+exports.instanceOfBlogpostList400Response = instanceOfBlogpostList400Response;
+exports.BlogpostList400ResponseFromJSON = BlogpostList400ResponseFromJSON;
+exports.BlogpostList400ResponseFromJSONTyped = BlogpostList400ResponseFromJSONTyped;
+exports.BlogpostList400ResponseToJSON = BlogpostList400ResponseToJSON;
 /**
  * Check if a given object implements the BlogpostList400Response interface.
  */
 function instanceOfBlogpostList400Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BlogpostList400Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfBlogpostList400Response = instanceOfBlogpostList400Response;
 function BlogpostList400ResponseFromJSON(json) {
     return BlogpostList400ResponseFromJSONTyped(json, false);
 }
-exports.BlogpostList400ResponseFromJSON = BlogpostList400ResponseFromJSON;
 function BlogpostList400ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -33,7 +43,6 @@ function BlogpostList400ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'filters': json['filters'] == null ? undefined : json['filters'],
     };
 }
-exports.BlogpostList400ResponseFromJSONTyped = BlogpostList400ResponseFromJSONTyped;
 function BlogpostList400ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -42,4 +51,3 @@ function BlogpostList400ResponseToJSON(value) {
         'filters': value['filters'],
     };
 }
-exports.BlogpostList400ResponseToJSON = BlogpostList400ResponseToJSON;

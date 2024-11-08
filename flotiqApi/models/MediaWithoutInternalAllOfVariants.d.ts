@@ -32,7 +32,7 @@ export interface MediaWithoutInternalAllOfVariants {
 /**
  * Check if a given object implements the MediaWithoutInternalAllOfVariants interface.
  */
-export declare function instanceOfMediaWithoutInternalAllOfVariants(value: object): boolean;
+export declare function instanceOfMediaWithoutInternalAllOfVariants(value: object): value is MediaWithoutInternalAllOfVariants;
 export declare function MediaWithoutInternalAllOfVariantsFromJSON(json: any): MediaWithoutInternalAllOfVariants;
 export declare function MediaWithoutInternalAllOfVariantsFromJSONTyped(json: any, ignoreDiscriminator: boolean): MediaWithoutInternalAllOfVariants;
 export declare function MediaWithoutInternalAllOfVariantsToJSON(value?: MediaWithoutInternalAllOfVariants | null): any;

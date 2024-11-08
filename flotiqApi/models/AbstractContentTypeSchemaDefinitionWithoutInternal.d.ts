@@ -25,7 +25,7 @@ export interface AbstractContentTypeSchemaDefinitionWithoutInternal {
 /**
  * Check if a given object implements the AbstractContentTypeSchemaDefinitionWithoutInternal interface.
  */
-export declare function instanceOfAbstractContentTypeSchemaDefinitionWithoutInternal(value: object): boolean;
+export declare function instanceOfAbstractContentTypeSchemaDefinitionWithoutInternal(value: object): value is AbstractContentTypeSchemaDefinitionWithoutInternal;
 export declare function AbstractContentTypeSchemaDefinitionWithoutInternalFromJSON(json: any): AbstractContentTypeSchemaDefinitionWithoutInternal;
 export declare function AbstractContentTypeSchemaDefinitionWithoutInternalFromJSONTyped(json: any, ignoreDiscriminator: boolean): AbstractContentTypeSchemaDefinitionWithoutInternal;
 export declare function AbstractContentTypeSchemaDefinitionWithoutInternalToJSON(value?: AbstractContentTypeSchemaDefinitionWithoutInternal | null): any;

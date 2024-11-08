@@ -73,7 +73,7 @@ export interface AbstractContentTypeSchemaDefinitionInternal {
 /**
  * Check if a given object implements the AbstractContentTypeSchemaDefinitionInternal interface.
  */
-export declare function instanceOfAbstractContentTypeSchemaDefinitionInternal(value: object): boolean;
+export declare function instanceOfAbstractContentTypeSchemaDefinitionInternal(value: object): value is AbstractContentTypeSchemaDefinitionInternal;
 export declare function AbstractContentTypeSchemaDefinitionInternalFromJSON(json: any): AbstractContentTypeSchemaDefinitionInternal;
 export declare function AbstractContentTypeSchemaDefinitionInternalFromJSONTyped(json: any, ignoreDiscriminator: boolean): AbstractContentTypeSchemaDefinitionInternal;
 export declare function AbstractContentTypeSchemaDefinitionInternalToJSON(value?: AbstractContentTypeSchemaDefinitionInternal | null): any;

@@ -12,7 +12,6 @@
 import type { AbstractContentTypeSchemaDefinitionInternal } from './AbstractContentTypeSchemaDefinitionInternal';
 import type { MediaWithoutInternalAllOfVariants } from './MediaWithoutInternalAllOfVariants';
 import type { Tag } from './Tag';
-import { DataSource } from './DataSource';
 /**
  *
  * @export
@@ -36,6 +35,12 @@ export interface Media {
      * @type {string}
      * @memberof Media
      */
+    alt?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Media
+     */
     url: string;
     /**
      *
@@ -48,7 +53,7 @@ export interface Media {
      * @type {Array<Tag>}
      * @memberof Media
      */
-    tags?: Array<Tag> | Array<DataSource>;
+    tags?: Array<Tag>;
     /**
      *
      * @type {string}
@@ -90,7 +95,7 @@ export interface Media {
      * @type {Array<MediaWithoutInternalAllOfVariants>}
      * @memberof Media
      */
-    variants?: Array<MediaWithoutInternalAllOfVariants> | Array<DataSource>;
+    variants?: Array<MediaWithoutInternalAllOfVariants>;
     /**
      *
      * @type {string}
@@ -107,7 +112,7 @@ export interface Media {
 /**
  * Check if a given object implements the Media interface.
  */
-export declare function instanceOfMedia(value: object): boolean;
+export declare function instanceOfMedia(value: object): value is Media;
 export declare function MediaFromJSON(json: any): Media;
 export declare function MediaFromJSONTyped(json: any, ignoreDiscriminator: boolean): Media;
 export declare function MediaToJSON(value?: Media | null): any;

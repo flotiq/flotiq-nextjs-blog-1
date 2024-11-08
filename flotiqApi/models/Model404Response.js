@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Model404ResponseToJSON = exports.Model404ResponseFromJSONTyped = exports.Model404ResponseFromJSON = exports.instanceOfModel404Response = void 0;
+exports.instanceOfModel404Response = instanceOfModel404Response;
+exports.Model404ResponseFromJSON = Model404ResponseFromJSON;
+exports.Model404ResponseFromJSONTyped = Model404ResponseFromJSONTyped;
+exports.Model404ResponseToJSON = Model404ResponseToJSON;
 /**
  * Check if a given object implements the Model404Response interface.
  */
 function instanceOfModel404Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'Model404Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfModel404Response = instanceOfModel404Response;
 function Model404ResponseFromJSON(json) {
     return Model404ResponseFromJSONTyped(json, false);
 }
-exports.Model404ResponseFromJSON = Model404ResponseFromJSON;
 function Model404ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -34,7 +44,6 @@ function Model404ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'message': json['message'] == null ? undefined : json['message'],
     };
 }
-exports.Model404ResponseFromJSONTyped = Model404ResponseFromJSONTyped;
 function Model404ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -44,4 +53,3 @@ function Model404ResponseToJSON(value) {
         'message': value['message'],
     };
 }
-exports.Model404ResponseToJSON = Model404ResponseToJSON;

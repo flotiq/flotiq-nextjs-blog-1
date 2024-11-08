@@ -13,23 +13,33 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlogpostWithoutRequiredToJSON = exports.BlogpostWithoutRequiredFromJSONTyped = exports.BlogpostWithoutRequiredFromJSON = exports.instanceOfBlogpostWithoutRequired = void 0;
-var AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
-var BlogpostWithoutInternalAllOfContent_1 = require("./BlogpostWithoutInternalAllOfContent");
-var DataSource_1 = require("./DataSource");
+exports.instanceOfBlogpostWithoutRequired = instanceOfBlogpostWithoutRequired;
+exports.BlogpostWithoutRequiredFromJSON = BlogpostWithoutRequiredFromJSON;
+exports.BlogpostWithoutRequiredFromJSONTyped = BlogpostWithoutRequiredFromJSONTyped;
+exports.BlogpostWithoutRequiredToJSON = BlogpostWithoutRequiredToJSON;
+const AbstractContentTypeSchemaDefinitionInternal_1 = require("./AbstractContentTypeSchemaDefinitionInternal");
+const BlogpostWithoutInternalAllOfContent_1 = require("./BlogpostWithoutInternalAllOfContent");
+const DataSource_1 = require("./DataSource");
 /**
  * Check if a given object implements the BlogpostWithoutRequired interface.
  */
 function instanceOfBlogpostWithoutRequired(value) {
-    if (!('id' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'BlogpostWithoutRequired' === typeSlug;
+    }
+    if (!('id' in value) || value['id'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfBlogpostWithoutRequired = instanceOfBlogpostWithoutRequired;
 function BlogpostWithoutRequiredFromJSON(json) {
     return BlogpostWithoutRequiredFromJSONTyped(json, false);
 }
-exports.BlogpostWithoutRequiredFromJSON = BlogpostWithoutRequiredFromJSON;
 function BlogpostWithoutRequiredFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -44,7 +54,6 @@ function BlogpostWithoutRequiredFromJSONTyped(json, ignoreDiscriminator) {
         'headerImage': json['headerImage'] == null ? undefined : (json['headerImage'].map(DataSource_1.DataSourceFromJSON)),
     };
 }
-exports.BlogpostWithoutRequiredFromJSONTyped = BlogpostWithoutRequiredFromJSONTyped;
 function BlogpostWithoutRequiredToJSON(value) {
     if (value == null) {
         return value;
@@ -59,4 +68,3 @@ function BlogpostWithoutRequiredToJSON(value) {
         'headerImage': value['headerImage'] == null ? undefined : (value['headerImage'].map(DataSource_1.DataSourceToJSON)),
     };
 }
-exports.BlogpostWithoutRequiredToJSON = BlogpostWithoutRequiredToJSON;

@@ -10,35 +10,35 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { BatchResponseSuccess, Blogpost, BlogpostBatchDelete200Response, BlogpostList, BlogpostVersionsList, BlogpostWithoutInternal, BlogpostWithoutRequired } from '../models/index';
-export interface BlogPostAPIDeleteRequest {
+import type { BatchResponseSuccess, Blogpost, BlogpostBatchDelete200Response, BlogpostList, BlogpostVersionsList, BlogpostWithoutInternal, BlogpostWithoutRequired } from '../models';
+export interface BlogpostAPIDeleteRequest {
     id: string;
 }
-export interface BlogPostAPIBatchCreateRequest {
+export interface BlogpostAPIBatchCreateRequest {
     updateExisting?: boolean;
     BlogpostWithoutInternal?: Array<BlogpostWithoutInternal>;
 }
-export interface BlogPostAPIBatchDeleteRequest {
+export interface BlogpostAPIBatchDeleteRequest {
     request_body?: Array<string>;
 }
-export interface BlogPostAPIBatchPatchRequest {
+export interface BlogpostAPIBatchPatchRequest {
     BlogpostWithoutInternal?: Array<BlogpostWithoutInternal>;
 }
-export interface BlogPostAPICreateRequest {
+export interface BlogpostAPICreateRequest {
     BlogpostWithoutInternal?: BlogpostWithoutInternal;
 }
-export interface BlogPostAPIGetRequest {
+export interface BlogpostAPIGetRequest {
     id: string;
     hydrate?: number;
 }
-export interface BlogPostAPIGetRemovedRequest {
+export interface BlogpostAPIGetRemovedRequest {
     deletedAfter?: string;
 }
-export interface BlogPostAPIGetVersionsRequest {
+export interface BlogpostAPIGetVersionsRequest {
     id: string;
     versionId: string;
 }
-export interface BlogPostAPIListRequest {
+export interface BlogpostAPIListRequest {
     page?: number;
     limit?: number;
     order_by?: string;
@@ -47,143 +47,143 @@ export interface BlogPostAPIListRequest {
     filters?: string;
     ids?: Array<string>;
 }
-export interface BlogPostAPIListVersionRequest {
+export interface BlogpostAPIListVersionRequest {
     id: string;
     page?: number;
     limit?: number;
     order_by?: string;
     order_direction?: string;
 }
-export interface BlogPostAPIPatchRequest {
+export interface BlogpostAPIPatchRequest {
     id: string;
     BlogpostWithoutRequired?: BlogpostWithoutRequired;
 }
-export interface BlogPostAPIUpdateRequest {
+export interface BlogpostAPIUpdateRequest {
     id: string;
     BlogpostWithoutInternal?: BlogpostWithoutInternal;
 }
 /**
  *
  */
-export declare class BlogPostAPI extends runtime.BaseAPI {
+export declare class BlogpostAPI extends runtime.BaseAPI {
     /**
      * Removes Blog post object.<br />
      * Delete a Blogpost object
      */
-    _deleteRaw(requestParameters: BlogPostAPIDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    _deleteRaw(requestParameters: BlogpostAPIDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Removes Blog post object.<br />
      * Delete a Blogpost object
      */
-    _delete(requestParameters: BlogPostAPIDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    _delete(requestParameters: BlogpostAPIDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Allows you to create or create and update up to 100 objects of Blog post type. <br />
      * Create a batch of blogpost objects
      */
-    batchCreateRaw(requestParameters: BlogPostAPIBatchCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BatchResponseSuccess>>;
+    batchCreateRaw(requestParameters: BlogpostAPIBatchCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BatchResponseSuccess>>;
     /**
      * Allows you to create or create and update up to 100 objects of Blog post type. <br />
      * Create a batch of blogpost objects
      */
-    batchCreate(requestParameters?: BlogPostAPIBatchCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BatchResponseSuccess>;
+    batchCreate(requestParameters?: BlogpostAPIBatchCreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BatchResponseSuccess>;
     /**
      * Allows you to delete up to 100 objects of Blog post type. <br />Request body accepts an array of content object IDs that are to be deleted.<br />
      * Delete a batch of Blogpost objects
      */
-    batchDeleteRaw(requestParameters: BlogPostAPIBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BlogpostBatchDelete200Response>>;
+    batchDeleteRaw(requestParameters: BlogpostAPIBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BlogpostBatchDelete200Response>>;
     /**
      * Allows you to delete up to 100 objects of Blog post type. <br />Request body accepts an array of content object IDs that are to be deleted.<br />
      * Delete a batch of Blogpost objects
      */
-    batchDelete(requestParameters?: BlogPostAPIBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BlogpostBatchDelete200Response>;
+    batchDelete(requestParameters?: BlogpostAPIBatchDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BlogpostBatchDelete200Response>;
     /**
      * Allows you to update up to 100 objects of Blog post type. <br />
      * Update selected fields of a batch of objects
      */
-    batchPatchRaw(requestParameters: BlogPostAPIBatchPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BatchResponseSuccess>>;
+    batchPatchRaw(requestParameters: BlogpostAPIBatchPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BatchResponseSuccess>>;
     /**
      * Allows you to update up to 100 objects of Blog post type. <br />
      * Update selected fields of a batch of objects
      */
-    batchPatch(requestParameters?: BlogPostAPIBatchPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BatchResponseSuccess>;
+    batchPatch(requestParameters?: BlogpostAPIBatchPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BatchResponseSuccess>;
     /**
      * Allows you to create object of Blog post type. <br />
      * Create a Blogpost object
      */
-    createRaw(requestParameters: BlogPostAPICreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
+    createRaw(requestParameters: BlogpostAPICreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
     /**
      * Allows you to create object of Blog post type. <br />
      * Create a Blogpost object
      */
-    create(requestParameters?: BlogPostAPICreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
+    create(requestParameters?: BlogpostAPICreateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
     /**
      * Returns all information about Blog post object. <br />
      * Get Blogpost object by Id
      */
-    getRaw(requestParameters: BlogPostAPIGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
+    getRaw(requestParameters: BlogpostAPIGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
     /**
      * Returns all information about Blog post object. <br />
      * Get Blogpost object by Id
      */
-    get(requestParameters: BlogPostAPIGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
+    get(requestParameters: BlogpostAPIGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
     /**
      * Get ids of removed Blog post objects. <br />
      * Get removed object identifiers
      */
-    getRemovedRaw(requestParameters: BlogPostAPIGetRemovedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>>;
+    getRemovedRaw(requestParameters: BlogpostAPIGetRemovedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>>;
     /**
      * Get ids of removed Blog post objects. <br />
      * Get removed object identifiers
      */
-    getRemoved(requestParameters?: BlogPostAPIGetRemovedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>>;
+    getRemoved(requestParameters?: BlogpostAPIGetRemovedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>>;
     /**
      * Return version of Blog post object. <br />
      * Get a specific version of Blogpost object
      */
-    getVersionsRaw(requestParameters: BlogPostAPIGetVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
+    getVersionsRaw(requestParameters: BlogpostAPIGetVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
     /**
      * Return version of Blog post object. <br />
      * Get a specific version of Blogpost object
      */
-    getVersions(requestParameters: BlogPostAPIGetVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
+    getVersions(requestParameters: BlogpostAPIGetVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
     /**
      * List objects of Blog post type. <br />
      * List Blogpost objects
      */
-    listRaw(requestParameters: BlogPostAPIListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BlogpostList>>;
+    listRaw(requestParameters: BlogpostAPIListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BlogpostList>>;
     /**
      * List objects of Blog post type. <br />
      * List Blogpost objects
      */
-    list(requestParameters?: BlogPostAPIListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BlogpostList>;
+    list(requestParameters?: BlogpostAPIListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BlogpostList>;
     /**
      * List objects versions of Blog post type. <br />
      * List all versions of a Blogpost object
      */
-    listVersionRaw(requestParameters: BlogPostAPIListVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BlogpostVersionsList>>;
+    listVersionRaw(requestParameters: BlogpostAPIListVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BlogpostVersionsList>>;
     /**
      * List objects versions of Blog post type. <br />
      * List all versions of a Blogpost object
      */
-    listVersion(requestParameters: BlogPostAPIListVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BlogpostVersionsList>;
+    listVersion(requestParameters: BlogpostAPIListVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BlogpostVersionsList>;
     /**
      * Allows update of the Blog post object, but it is unnecessary to specify all the object\'s properties. Properties not included in the payload will be completed with data from the database. <br />
      * Update selected fields of Blogpost object
      */
-    patchRaw(requestParameters: BlogPostAPIPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
+    patchRaw(requestParameters: BlogpostAPIPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
     /**
      * Allows update of the Blog post object, but it is unnecessary to specify all the object\'s properties. Properties not included in the payload will be completed with data from the database. <br />
      * Update selected fields of Blogpost object
      */
-    patch(requestParameters: BlogPostAPIPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
+    patch(requestParameters: BlogpostAPIPatchRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
     /**
      * Allows update of the Blog post object, it has to have all fields, as this operation overwrites the object. All properties not included in the payload will be lost. <br />
      * Update existing Blogpost object
      */
-    updateRaw(requestParameters: BlogPostAPIUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
+    updateRaw(requestParameters: BlogpostAPIUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blogpost>>;
     /**
      * Allows update of the Blog post object, it has to have all fields, as this operation overwrites the object. All properties not included in the payload will be lost. <br />
      * Update existing Blogpost object
      */
-    update(requestParameters: BlogPostAPIUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
+    update(requestParameters: BlogpostAPIUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blogpost>;
 }

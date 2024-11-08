@@ -59,12 +59,12 @@ export interface BlogpostWithoutRequired {
      * @type {Array<DataSource>}
      * @memberof BlogpostWithoutRequired
      */
-    headerImage?: Array<DataSource> | Array<DataSource>;
+    headerImage?: Array<DataSource>;
 }
 /**
  * Check if a given object implements the BlogpostWithoutRequired interface.
  */
-export declare function instanceOfBlogpostWithoutRequired(value: object): boolean;
+export declare function instanceOfBlogpostWithoutRequired(value: object): value is BlogpostWithoutRequired;
 export declare function BlogpostWithoutRequiredFromJSON(json: any): BlogpostWithoutRequired;
 export declare function BlogpostWithoutRequiredFromJSONTyped(json: any, ignoreDiscriminator: boolean): BlogpostWithoutRequired;
 export declare function BlogpostWithoutRequiredToJSON(value?: BlogpostWithoutRequired | null): any;

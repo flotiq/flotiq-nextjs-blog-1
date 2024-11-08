@@ -44,7 +44,7 @@ export interface BatchResponseError {
 /**
  * Check if a given object implements the BatchResponseError interface.
  */
-export declare function instanceOfBatchResponseError(value: object): boolean;
+export declare function instanceOfBatchResponseError(value: object): value is BatchResponseError;
 export declare function BatchResponseErrorFromJSON(json: any): BatchResponseError;
 export declare function BatchResponseErrorFromJSONTyped(json: any, ignoreDiscriminator: boolean): BatchResponseError;
 export declare function BatchResponseErrorToJSON(value?: BatchResponseError | null): any;

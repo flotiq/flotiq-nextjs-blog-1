@@ -13,18 +13,28 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MediaCreate400ResponseToJSON = exports.MediaCreate400ResponseFromJSONTyped = exports.MediaCreate400ResponseFromJSON = exports.instanceOfMediaCreate400Response = void 0;
+exports.instanceOfMediaCreate400Response = instanceOfMediaCreate400Response;
+exports.MediaCreate400ResponseFromJSON = MediaCreate400ResponseFromJSON;
+exports.MediaCreate400ResponseFromJSONTyped = MediaCreate400ResponseFromJSONTyped;
+exports.MediaCreate400ResponseToJSON = MediaCreate400ResponseToJSON;
 /**
  * Check if a given object implements the MediaCreate400Response interface.
  */
 function instanceOfMediaCreate400Response(value) {
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'MediaCreate400Response' === typeSlug;
+    }
     return true;
 }
-exports.instanceOfMediaCreate400Response = instanceOfMediaCreate400Response;
 function MediaCreate400ResponseFromJSON(json) {
     return MediaCreate400ResponseFromJSONTyped(json, false);
 }
-exports.MediaCreate400ResponseFromJSON = MediaCreate400ResponseFromJSON;
 function MediaCreate400ResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -42,7 +52,6 @@ function MediaCreate400ResponseFromJSONTyped(json, ignoreDiscriminator) {
         'height': json['height'] == null ? undefined : json['height'],
     };
 }
-exports.MediaCreate400ResponseFromJSONTyped = MediaCreate400ResponseFromJSONTyped;
 function MediaCreate400ResponseToJSON(value) {
     if (value == null) {
         return value;
@@ -60,4 +69,3 @@ function MediaCreate400ResponseToJSON(value) {
         'height': value['height'],
     };
 }
-exports.MediaCreate400ResponseToJSON = MediaCreate400ResponseToJSON;

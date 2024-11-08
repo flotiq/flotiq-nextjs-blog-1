@@ -13,22 +13,32 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MediaWithoutInternalAllOfTrimToJSON = exports.MediaWithoutInternalAllOfTrimFromJSONTyped = exports.MediaWithoutInternalAllOfTrimFromJSON = exports.instanceOfMediaWithoutInternalAllOfTrim = void 0;
+exports.instanceOfMediaWithoutInternalAllOfTrim = instanceOfMediaWithoutInternalAllOfTrim;
+exports.MediaWithoutInternalAllOfTrimFromJSON = MediaWithoutInternalAllOfTrimFromJSON;
+exports.MediaWithoutInternalAllOfTrimFromJSONTyped = MediaWithoutInternalAllOfTrimFromJSONTyped;
+exports.MediaWithoutInternalAllOfTrimToJSON = MediaWithoutInternalAllOfTrimToJSON;
 /**
  * Check if a given object implements the MediaWithoutInternalAllOfTrim interface.
  */
 function instanceOfMediaWithoutInternalAllOfTrim(value) {
-    if (!('top' in value))
+    var _a;
+    const flotiqContentType = (_a = value.internal) === null || _a === void 0 ? void 0 : _a.contentType;
+    if (flotiqContentType) {
+        const typeSlug = flotiqContentType.split('_')
+            .filter(Boolean)
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join('');
+        return 'MediaWithoutInternalAllOfTrim' === typeSlug;
+    }
+    if (!('top' in value) || value['top'] === undefined)
         return false;
-    if (!('left' in value))
+    if (!('left' in value) || value['left'] === undefined)
         return false;
     return true;
 }
-exports.instanceOfMediaWithoutInternalAllOfTrim = instanceOfMediaWithoutInternalAllOfTrim;
 function MediaWithoutInternalAllOfTrimFromJSON(json) {
     return MediaWithoutInternalAllOfTrimFromJSONTyped(json, false);
 }
-exports.MediaWithoutInternalAllOfTrimFromJSON = MediaWithoutInternalAllOfTrimFromJSON;
 function MediaWithoutInternalAllOfTrimFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
@@ -42,7 +52,6 @@ function MediaWithoutInternalAllOfTrimFromJSONTyped(json, ignoreDiscriminator) {
         'height': json['height'] == null ? undefined : json['height'],
     };
 }
-exports.MediaWithoutInternalAllOfTrimFromJSONTyped = MediaWithoutInternalAllOfTrimFromJSONTyped;
 function MediaWithoutInternalAllOfTrimToJSON(value) {
     if (value == null) {
         return value;
@@ -56,4 +65,3 @@ function MediaWithoutInternalAllOfTrimToJSON(value) {
         'height': value['height'],
     };
 }
-exports.MediaWithoutInternalAllOfTrimToJSON = MediaWithoutInternalAllOfTrimToJSON;

@@ -75,7 +75,7 @@ export interface VersionItem {
 /**
  * Check if a given object implements the VersionItem interface.
  */
-export declare function instanceOfVersionItem(value: object): boolean;
+export declare function instanceOfVersionItem(value: object): value is VersionItem;
 export declare function VersionItemFromJSON(json: any): VersionItem;
 export declare function VersionItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): VersionItem;
 export declare function VersionItemToJSON(value?: VersionItem | null): any;

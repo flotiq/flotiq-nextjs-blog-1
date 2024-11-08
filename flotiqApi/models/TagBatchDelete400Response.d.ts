@@ -25,7 +25,7 @@ export interface TagBatchDelete400Response {
 /**
  * Check if a given object implements the TagBatchDelete400Response interface.
  */
-export declare function instanceOfTagBatchDelete400Response(value: object): boolean;
+export declare function instanceOfTagBatchDelete400Response(value: object): value is TagBatchDelete400Response;
 export declare function TagBatchDelete400ResponseFromJSON(json: any): TagBatchDelete400Response;
 export declare function TagBatchDelete400ResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): TagBatchDelete400Response;
 export declare function TagBatchDelete400ResponseToJSON(value?: TagBatchDelete400Response | null): any;
