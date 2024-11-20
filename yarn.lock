@@ -1198,10 +1198,10 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.7.tgz#d0ece53ce99ab5a8e37ebdfe5e32452a2bfc073e"
   integrity sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==
 
-"@fontsource/sora@^5.0.19":
-  version "5.0.19"
-  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-5.0.19.tgz#1873263f431aac0fcbf9420cd38cdd78fcbe906b"
-  integrity sha512-UonP14EH8X0WgKjTbOQsmQAL862O4wvi4i4+EDN/gUutMau6nOjrMutn8XiLyRm98cjUbijMXhJ4NcOI+MBFNw==
+"@fontsource/sora@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-5.1.0.tgz#437dcf12ae73f22a9fb33a21bb6f6e5131254370"
+  integrity sha512-rcjKi18Y49yFDBPzgh2r2/Rv+hrJTGLhlouxYxc9CN1GPNZ+NyEqhrE2GNz/0LipcxTy2S7DhNXJpeJSLNpIeA==
 
 "@headlessui/react@^2.1.3":
   version "2.1.3"
