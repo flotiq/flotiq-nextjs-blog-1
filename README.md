@@ -72,7 +72,7 @@ On the main branch, you can see a project based on the Next.js app router. This 
         ```
     If you want to read more about our flotiq-nextjs-setup CLI, refer to our [Flotiq NextJS docs](https://flotiq.com/docs/Universe/nextjs/nextjs-setup/).
 
-    If instead you prefer to install only Flotiq SDK, manually, do the following steps.
+    If instead you prefer to install only Flotiq SDK, manually, do the following steps:
 
     ```bash
     npx flotiq-codegen-ts generate --compiled-js
