@@ -59,7 +59,7 @@ On the main branch, you can see a project based on the Next.js app router. This 
 5. **Flotiq codegen - install SDK**
     
     This package simplifies JavaScript Fetch API integration for your Flotiq project, tailored to your Flotiq account
-    data. <!-- To build your customized API package, just run this command: -->
+    data.
     
     To install Flotiq SDK you can use flotiq-nextjs-setup CLI, that will not only seemlessly generate SDK for your Next.js project, but will also add content cache revalidation endpoint, handle draft mode for unpublished content on Flotiq and more. To use the flotiq-nextjs-setup CLI simply:
     - install flotiq-nextjs-setup CLI:
