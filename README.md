@@ -27,7 +27,6 @@ On the main branch, you can see a project based on the Next.js app router. This 
     ```
     _Note: You need to put your Read and write API key as the `flotiqApiKey` for import to work, You don't need any content types in your account._
 
-
 3. **Configure application**
 
     The next step is to configure our application to know from where it has to fetch the data.
@@ -47,7 +46,6 @@ On the main branch, you can see a project based on the Next.js app router. This 
 
     _Note: If there are existing .env files in the project, flotiq-setup may overwrite them._
 
-
 4. **Install dependencies**
 
     Navigate into your new site’s directory and run
@@ -59,8 +57,21 @@ On the main branch, you can see a project based on the Next.js app router. This 
 5. **Flotiq codegen - install SDK**
     
     This package simplifies JavaScript Fetch API integration for your Flotiq project, tailored to your Flotiq account
-    data. To build your customized API package, just run this command:
+    data.
     
+    To install Flotiq SDK you can use flotiq-nextjs-setup CLI, that will not only seamlessly generate SDK for your Next.js project, but will also add content cache revalidation endpoint, handle draft mode for unpublished content on Flotiq and more. To use the flotiq-nextjs-setup CLI simply:
+    - install flotiq-nextjs-setup CLI:
+        ```bash
+        npm install -g flotiq-nextjs-setup
+        ```
+    - run the setup:
+        ```bash
+        npx flotiq-nextjs-setup
+        ```
+    If you want to read more about our flotiq-nextjs-setup CLI, refer to our [Flotiq NextJS docs](https://flotiq.com/docs/Universe/nextjs/nextjs-setup/).
+
+    If instead you prefer to install only Flotiq SDK, manually, do the following steps:
+
     ```bash
     npx flotiq-codegen-ts generate --compiled-js
     ```
@@ -81,7 +92,6 @@ On the main branch, you can see a project based on the Next.js app router. This 
     
     _Note: If you make any changes (additions or deletions) to the `content type definitions` in your Flotiq account, you will need to rerun `npx flotiq-codegen-ts generate --compiled-js` command._
 
-
 6. **Developing**
     
     Navigate into your new site’s directory and start it up.
@@ -93,7 +103,6 @@ On the main branch, you can see a project based on the Next.js app router. This 
     Your site is now running at `http://localhost:3000`!
     
     Open the `flotiq-nextjs-blog-1` directory in your code editor of choice and edit `pages/[pages].js`. Save your changes and the browser will update in real time!
-
 
 7. **Manage your content using Flotiq editor**
     
