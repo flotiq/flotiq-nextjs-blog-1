@@ -59,15 +59,11 @@ On the main branch, you can see a project based on the Next.js app router. This 
     This package simplifies JavaScript Fetch API integration for your Flotiq project, tailored to your Flotiq account
     data.
     
-    To install Flotiq SDK you can use flotiq-nextjs-setup CLI, that will not only seamlessly generate SDK for your Next.js project, but will also add content cache revalidation endpoint, handle draft mode for unpublished content on Flotiq and more. To use the flotiq-nextjs-setup CLI simply:
-    - install flotiq-nextjs-setup CLI:
-        ```bash
-        npm install -g flotiq-nextjs-setup
-        ```
-    - run the setup:
-        ```bash
-        npx flotiq-nextjs-setup
-        ```
+    To install Flotiq SDK you can use flotiq-nextjs-setup CLI, that will not only seamlessly generate SDK for your Next.js project, but will also add content cache revalidation endpoint, handle draft mode for unpublished content on Flotiq and more. To use the flotiq-nextjs-setup CLI simply run the setup:
+
+    ```bash
+    npx flotiq-nextjs-setup
+    ```
     If you want to read more about our flotiq-nextjs-setup CLI, refer to our [Flotiq NextJS docs](https://flotiq.com/docs/Universe/nextjs/nextjs-setup/).
 
     If instead you prefer to install only Flotiq SDK, manually, do the following steps:
