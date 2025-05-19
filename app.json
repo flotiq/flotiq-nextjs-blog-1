@@ -1,0 +1,14 @@
+{
+    "name": "flotiq-nextjs-blog-1",
+    "repository": "https://github.com/flotiq/flotiq-nextjs-blog-1",
+    "env":{
+      "FLOTIQ_API_KEY": {
+        "description": "Flotiq API key"
+      }
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ]
+  }

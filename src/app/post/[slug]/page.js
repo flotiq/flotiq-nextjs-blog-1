@@ -14,7 +14,7 @@ import BlogPostContent from '@/components/blog-post/BlogPostContent';
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-    const posts = await getBlogPosts(1, 10000);
+    const posts = await getBlogPosts(1, 1000);
     const postData = posts.data;
     return postData.map(({ slug }) => ({ slug }));
 }
