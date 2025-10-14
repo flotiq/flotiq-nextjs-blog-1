@@ -20,7 +20,7 @@ const CustomCard = ({ title, excerpt, date, readingTime, image, slug }) => (
         >
             <Card.Body
                 additionalClasses={[
-                    'flex flex-col items-start justify-between order-2 lg:order-1 px-5 md:px-10 pt-10 pb-5',
+                    'flex flex-col items-start justify-between order-1 lg:order-2 px-5 md:px-10 pt-10 pb-5',
                 ]}
             >
                 <Card.Title>{title}</Card.Title>
@@ -42,7 +42,7 @@ const CustomCard = ({ title, excerpt, date, readingTime, image, slug }) => (
                 </div>
             </Card.Body>
             {image && (
-                <div className="lg:basis-3/5 order-1 lg:order-2 w-full block leading-[0]">
+                <div className="lg:basis-3/5 order-2 lg:order-1 w-full block leading-[0]">
                     <Image
                         alt={title}
                         src={image && getMediaUrl(image, 875, 480)}
