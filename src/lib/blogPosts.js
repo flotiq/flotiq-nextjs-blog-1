@@ -4,7 +4,7 @@ const apiKey = process.env.FLOTIQ_API_KEY;
 const DEFAULT_ORDER = 'internal.createdAt';
 const DEFAULT_DIRECTION = 'desc';
 const DEFAULT_LIMIT = 6;
-const api = new Flotiq(apiKey);
+export const api = new Flotiq(apiKey);
 
 const getPost = async (filters, orderDirection) => {
     const postResponse = await api.content.blogpost.list({
