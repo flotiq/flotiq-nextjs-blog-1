@@ -2,7 +2,7 @@
   "name": "flotiq-nextjs-blog-1",
   "private": true,
   "description": "Flotiq NextJS event starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Flotiq team <helo@flotiq.com> (https://flotiq.com/)",
   "scripts": {
@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@flotiq/flotiq-api-sdk": "^1.1.1",
     "@fontsource/sora": "^5.0.19",
     "@headlessui/react": "^2.1.3",
     "@heroicons/react": "^2.1.5",

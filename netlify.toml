@@ -1,2 +1,4 @@
 [template.environment]
   FLOTIQ_API_KEY="YOUR FLOTIQ API KEY"
+[build.environment]
+  NODE_VERSION = "24"
