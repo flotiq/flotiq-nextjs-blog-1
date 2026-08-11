@@ -2,7 +2,7 @@
   "name": "flotiq-nextjs-blog-1",
   "private": true,
   "description": "Flotiq NextJS event starter",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Flotiq team <helo@flotiq.com> (https://flotiq.com/)",
   "scripts": {
